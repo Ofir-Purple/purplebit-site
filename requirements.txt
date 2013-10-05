@@ -1,0 +1,8 @@
+Django
+South
+psycopg2
+django-grappelli
+gunicorn
+dj-database-url
+# django-storages
+# boto
