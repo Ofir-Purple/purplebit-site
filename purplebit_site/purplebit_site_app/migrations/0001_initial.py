@@ -17,4 +17,4 @@ class Migration(SchemaMigration):
         
     }
 
-    complete_apps = ['skeleton_app']
+    complete_apps = ['purplebit_site_app']

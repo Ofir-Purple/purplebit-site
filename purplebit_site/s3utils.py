@@ -1,6 +1,6 @@
 import os
 from datetime import datetime
-from skeleton.settings import AWS_STORAGE_BUCKET_NAME
+from purplebit_site.settings import AWS_STORAGE_BUCKET_NAME
 from storages.backends.s3boto import S3BotoStorage
 from django.utils.functional import SimpleLazyObject
 

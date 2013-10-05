@@ -1,4 +1,4 @@
-Django-Skeleton
+Purple Bit Site
 ===============
 
-A skeleton for a Django project
+Purple Bit's marketing site.

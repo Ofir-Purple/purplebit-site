@@ -1,8 +1,8 @@
-# Django settings for skeleton project.
+# Django settings for purplebit_site project.
 
 import os, dj_database_url
 
-DEBUG = (os.environ['SKELETON_ENV_DEBUG'] == 'TRUE')
+DEBUG = (os.environ['PURPLEBIT_SITE_ENV_DEBUG'] == 'TRUE')
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -13,7 +13,7 @@ MANAGERS = ADMINS
 
 
 SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
-SITE_NAME = "Skeleton - App"
+SITE_NAME = "Purple Bit"
 
 
 DATABASES = {'default': dj_database_url.config()}
@@ -62,7 +62,7 @@ STATIC_ROOT = ''
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
-STATIC_URL = os.environ['SKELETON_ENV_STATIC_URL']
+STATIC_URL = os.environ['PURPLEBIT_SITE_ENV_STATIC_URL']
 ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
 
 
@@ -82,7 +82,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = os.environ['SKELETON_ENV_SECRET_KEY']
+SECRET_KEY = os.environ['PURPLEBIT_SITE_ENV_SECRET_KEY']
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -111,17 +111,17 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'skeleton.urls'
+ROOT_URLCONF = 'purplebit_site.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'skeleton.wsgi.application'
+WSGI_APPLICATION = 'purplebit_site.wsgi.application'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
 
-    os.path.join(os.path.dirname(__file__), 'skeleton_app/templates').replace('\\','/'),
+    os.path.join(os.path.dirname(__file__), 'purplebit_site_app/templates').replace('\\','/'),
 )
 
 INSTALLED_APPS = (
@@ -140,7 +140,7 @@ INSTALLED_APPS = (
     'south',
     'gunicorn',
 
-    'skeleton_app',
+    'purplebit_site_app',
 )
 
 ips = ["10.0.0.%d" %i for i in range(1, 256)]
@@ -190,10 +190,10 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # ##
 
 # Uncomment for S3 support
-# DEFAULT_FILE_STORAGE = os.environ['SKELETON_ENV_DEFAULT_FILE_STORAGE']
-# STATICFILES_STORAGE = os.environ['SKELETON_ENV_STATICFILES_STORAGE']
-# AWS_ACCESS_KEY_ID = os.environ['SKELETON_ENV_AWS_ACCESS_KEY_ID']
-# AWS_SECRET_ACCESS_KEY = os.environ['SKELETON_ENV_AWS_SECRET_ACCESS_KEY']
-# AWS_STORAGE_BUCKET_NAME = os.environ['SKELETON_ENV_AWS_STORAGE_BUCKET_NAME']
+# DEFAULT_FILE_STORAGE = os.environ['PURPLEBIT_SITE_ENV_DEFAULT_FILE_STORAGE']
+# STATICFILES_STORAGE = os.environ['PURPLEBIT_SITE_ENV_STATICFILES_STORAGE']
+# AWS_ACCESS_KEY_ID = os.environ['PURPLEBIT_SITE_ENV_AWS_ACCESS_KEY_ID']
+# AWS_SECRET_ACCESS_KEY = os.environ['PURPLEBIT_SITE_ENV_AWS_SECRET_ACCESS_KEY']
+# AWS_STORAGE_BUCKET_NAME = os.environ['PURPLEBIT_SITE_ENV_AWS_STORAGE_BUCKET_NAME']
 
 
