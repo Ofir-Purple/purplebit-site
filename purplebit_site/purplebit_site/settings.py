@@ -144,9 +144,9 @@ INSTALLED_APPS = (
     'gunicorn',
 
 
+    'blog',
 
     # Zinnia
-    'zinnia_bootstrap',
     'django.contrib.comments',
     'tagging',
     'mptt',
@@ -155,7 +155,6 @@ INSTALLED_APPS = (
 
     'backend',
     'main_site',
-    'blog',
 )
 
 ips = ["10.0.0.%d" %i for i in range(1, 256)]
