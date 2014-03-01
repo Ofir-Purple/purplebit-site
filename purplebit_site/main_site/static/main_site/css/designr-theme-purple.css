@@ -269,7 +269,7 @@ body {
 
 #main-nav li{
     background:transparent;
-    margin:0 10px;
+    margin:0 7px;
     border:2px solid transparent;
 }
 
@@ -1251,6 +1251,10 @@ header.jumbotron{
     background:#fff;
     color:#7A539B;
     padding:30px 0;
+}
+
+#main-footer.border {
+    border-top: 1px solid #7A539B;
 }
 
 #main-footer .small-logo {

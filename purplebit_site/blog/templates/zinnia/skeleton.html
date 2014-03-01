@@ -3,7 +3,7 @@
 <html lang="{{ LANGUAGE_CODE }}">
   <head>
     <meta charset="utf-8">
-    <title>Zinnia's Weblog - {% block title %}{% endblock title %}{% block title-page %}{% endblock title-page %}</title>
+    <title>Purple Blog - {% block title %}{% endblock title %}{% block title-page %}{% endblock title-page %}</title>
     <meta name="robots" content="follow, all" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="{% block meta-description %}{% trans "Just another Zinnia weblog." %}{% endblock meta-description %}{% block meta-description-page %}{% endblock meta-description-page %}" />
@@ -13,9 +13,10 @@
     <link rel="pingback" href="/xmlrpc/" />
     <link rel="home" href="{% url 'zinnia_entry_archive_index' %}" />
     <link rel="stylesheet" href="{% static "zinnia_bootstrap/bootstrap/css/bootstrap.min.css" %}" />
+    <link rel="stylesheet" href="{% static "main_site/css/designr-theme-purple.css" %}" />
     <style type="text/css">
       body {
-        padding-top: 70px;
+        padding-top: 110px;
       }
       body > nav img {
         margin-top: 5px;
@@ -38,7 +39,8 @@
     {% block script %}{% endblock script %}
   </head>
   <body class="zinnia {% block body-class %}{% endblock body-class %}">
-    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+
+    <!-- <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -47,42 +49,21 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <img src="{% static "zinnia_bootstrap/img/zinnia.png" %}" class="pull-left" alt="Zinnia's Weblog" />
-          <a href="{% url 'zinnia_entry_archive_index' %}" title="Zinnia's Welog" class="navbar-brand" rel="home">
-            Zinnia's Weblog
+          <img src="{% static "zinnia_bootstrap/img/zinnia.png" %}" class="pull-left" alt="Purple Blog" />
+          <a href="{% url 'zinnia_entry_archive_index' %}" title="Purple Blog" class="navbar-brand" rel="home">
+            Purple Blog
           </a>
         </div>
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-          <ul class="nav navbar-nav navbar-left">
-            {% url 'zinnia_category_list' as category_list_url %}
-            <li {% if category_list_url in request.path %}class="active"{% endif %}>
-              <a href="{{ category_list_url }}" title="{% trans "Category list" %}">
-                {% trans "Categories" %}
-              </a>
-            </li>
-            {% url 'zinnia_author_list' as author_list_url %}
-            <li {% if author_list_url in request.path %}class="active"{% endif %}>
-              <a href="{{ author_list_url }}" title="{% trans "Author list" %}">
-                {% trans "Authors" %}
-              </a>
-            </li>
-            {% url 'zinnia_tag_list' as tag_list_url %}
-            <li {% if tag_list_url in request.path %}class="active"{% endif %}>
-              <a href="{{ tag_list_url }}" title="{% trans "Tag list" %}">
-                {% trans "Tags" %}
-              </a>
-            </li>
-            <li class="divider-vertical"></li>
-          </ul>
-          <form method="get" action="{% url 'zinnia_entry_search' %}" class="navbar-form navbar-left">
+        <div class="collapse navbar-collapse navbar-ex1-collapse"> -->
+          <!-- <form method="get" action="{% url 'zinnia_entry_search' %}" class="navbar-form navbar-left">
             <div class="form-group">
               <input type="text" class="search-query form-control" placeholder="{% trans 'Search' %}" name="pattern" value="{{ pattern }}" />
             </div>
             <button type="submit" name="submit" class="btn btn-default btn-sm">
               <span class="glyphicon glyphicon-search"></span>
             </button>
-          </form>
-          <ul class="nav navbar-nav navbar-right">
+          </form> -->
+          <!-- <ul class="nav navbar-nav navbar-right">
             {% url 'zinnia_sitemap' as sitemap_url %}
             <li {% if sitemap in request.path %}class="active"{% endif %}>
             <li>
@@ -99,7 +80,44 @@
           </ul>
         </div>
       </div>
-    </nav>
+    </nav> -->
+
+    <!-- ==============================================
+    MAIN NAV
+    =============================================== -->
+    <div id="main-nav" class="navbar navbar-fixed-top scrolled">
+      <div class="container">
+      
+        <div class="navbar-header">
+        
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#site-nav">
+            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button>
+          
+          <!-- ======= LOGO ========-->
+          <a class="navbar-brand scrollto " href="/"><img src="{% static 'main_site/img/logo.png' %}"></span></a>
+        
+        </div>
+        
+        <div id="site-nav" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="/" class="scrollto">Home</a>
+            </li>
+            <li>
+              <a href="/blog/" class="scrollto">Blog</a>
+            </li>
+            <li>
+              <a href="/#contact" class="scrollto">Contact Us</a>
+            </li>
+          </ul>
+        </div><!--End navbar-collapse -->
+        
+      </div><!--End container -->
+      
+    </div><!--End main-nav -->
+
+
     {% block slider %}{% endblock %}
     <div class="container">
       <div class="row">
@@ -133,9 +151,37 @@
         </div>
       </div>
     </div>
-    <footer class="container">
-      <p>{% blocktrans %}Powered by <a href="http://www.djangoproject.com">Django</a> and <a href="https://github.com/Fantomas42/django-blog-zinnia">Zinnia {{ ZINNIA_VERSION }}</a>.{% endblocktrans %}</p>
-    </footer>
+    <!-- ==============================================
+    FOOTER
+    =============================================== --> 
+    <footer id="main-footer" class="border">
+    
+      <div class="container">
+      
+        <div class="row">
+        
+          <div class="col-sm-6 left-col">
+            <h1 class="small-logo">Purple Bit LTD<br><span>A Web Consultancy</span></h1>
+            <ul class="footer-nav">
+              <li><a class="scrollto" href="#home">Home</a></li>
+              <li><a class="scrollto" href="#services">Services</a></li>
+              <li><a class="scrollto" href="#portfolio">Portfolio</a></li>
+              <li><a class="scrollto" href="#contact">Contact</a></li>
+            </ul>
+            <p>&copy; Copyright 2012 / All Rights Reserved</p>
+          </div>
+          
+          <div class="col-sm-6 right-col">
+            <h2>Who Are We?</h2>
+            <p>We're a dev-shop that specializes in Django and AngularJS. Located at the center of the startup hub of Tel Aviv, we work with many Israeli and world-wide startups and established companies, making their dreams come true.</p>
+          </div>
+          
+        </div><!-- End row -->
+        
+      </div><!-- End container -->
+      
+    </footer><!-- End footer -->
+
     <script type="text/javascript" src="{% static "zinnia_bootstrap/assets/js/jquery.js" %}"></script>
     <script type="text/javascript" src="{% static "zinnia_bootstrap/bootstrap/js/bootstrap.min.js" %}"></script>
   </body>

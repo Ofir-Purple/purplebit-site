@@ -57,7 +57,7 @@
 {% endblock entry-widgets %}
 
 {% block entry-comments %}
-{% if object.comment_count %}
+<!-- {% if object.comment_count %}
 <section id="comments" class="panel panel-info">
   <div class="panel-heading">
     {% trans "Comments" %}
@@ -97,10 +97,10 @@
 <p>{% trans "Comments are closed." %}</p>
 {% endif %}
 {% endif %}
-{% endblock entry-comments %}
+ -->{% endblock entry-comments %}
 
 {% block entry-pingbacks %}
-{% if object.pingback_count %}
+<!-- {% if object.pingback_count %}
 <section id="pingbacks" class="panel panel-info">
   <div class="panel-heading">
     {% trans "Pingbacks" %}
@@ -133,11 +133,11 @@
 <p>{% trans "Pingbacks are open." %}</p>
 {% else %}
 <p>{% trans "Pingbacks are closed." %}</p>
-{% endif %}
+{% endif %} -->
 {% endblock entry-pingbacks %}
 
 {% block entry-trackbacks %}
-{% if object.trackback_count %}
+<!-- {% if object.trackback_count %}
 <section id="trackbacks" class="panel panel-info">
   <div class="panel-heading">
     {% trans "Trackbacks" %}
@@ -171,7 +171,7 @@
   <a href="{% url 'zinnia_entry_trackback' object.pk %}" rel="trackback">
     {% trans "Trackback URL" %}</a>
 </p>
-{% endif %}
+{% endif %} -->
 {% endblock entry-trackbacks %}
 
 {% block admin-tools %}
