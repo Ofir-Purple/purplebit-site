@@ -30,11 +30,13 @@
         <script src="{% static "zinnia_bootstrap/assets/js/html5shiv.js" %}"></script>
         <script src="{% static "zinnia_bootstrap/assets/js/respond.min.js" %}"></script>
     <![endif]-->
-    <link rel="shortcut icon" href="{% static "zinnia/img/favicon.ico" %}" />
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static "zinnia_bootstrap/assets/ico/apple-touch-icon-144-precomposed.png" %}" />
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static "zinnia_bootstrap/assets/ico/apple-touch-icon-114-precomposed.png" %}" />
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static "zinnia_bootstrap/assets/ico/apple-touch-icon-72-precomposed.png" %}" />
-    <link rel="apple-touch-icon-precomposed" href="{% static "zinnia_bootstrap/assets/ico/apple-touch-icon-57-precomposed.png" %}" />
+    <!-- ==============================================
+    Favicons
+    =============================================== -->
+    <link rel="shortcut icon" href="{% static 'main_site/img/favicon.ico' %}">
+    <link rel="apple-touch-icon" href="{% static 'main_site/img/apple-touch-icon.png' %}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'main_site/img/apple-touch-icon-72x72.png' %}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'main_site/img/apple-touch-icon-114x114.png' %}">
     {% block link %}{% endblock link %}
     {% block script %}{% endblock script %}
   </head>
