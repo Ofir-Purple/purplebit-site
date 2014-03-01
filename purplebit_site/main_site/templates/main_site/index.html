@@ -635,6 +635,8 @@
 					<!--=== Contact Form ===-->
 
 					<form id="contact-form" class="col-sm-7 scrollimation fade-left" action="{% url 'backend:contact' %}" method="post" novalidate>
+
+						{% csrf_token %}
 						
 						<div class="form-group">
 						  <label class="control-label" for="contact-name">Name</label>
