@@ -17,6 +17,7 @@ urlpatterns = patterns('',
 
     url(r'^backend/', include('backend.urls', namespace='backend')),
 
+    url(r'^blog/', include('blog.urls')),
 
     url(r'^$', include('main_site.urls')),
 )

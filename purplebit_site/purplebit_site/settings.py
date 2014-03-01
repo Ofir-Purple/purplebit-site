@@ -88,6 +88,7 @@ SECRET_KEY = os.environ['PURPLEBIT_SITE_ENV_SECRET_KEY']
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
+    'app_namespace.Loader',
 #     'django.template.loaders.eggs.Loader',
 )
 
@@ -98,6 +99,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.media',
     'django.core.context_processors.request',
     'django.core.context_processors.static',
+
+    'zinnia.context_processors.version', # Optional
 )
 
 
@@ -142,8 +145,17 @@ INSTALLED_APPS = (
 
 
 
+    # Zinnia
+    'zinnia_bootstrap',
+    'django.contrib.comments',
+    'tagging',
+    'mptt',
+    'zinnia',
+
+
     'backend',
     'main_site',
+    'blog',
 )
 
 ips = ["10.0.0.%d" %i for i in range(1, 256)]
@@ -197,6 +209,11 @@ STATICFILES_STORAGE = os.environ['PURPLEBIT_SITE_ENV_STATICFILES_STORAGE']
 AWS_ACCESS_KEY_ID = os.environ['PURPLEBIT_SITE_ENV_AWS_ACCESS_KEY_ID']
 AWS_SECRET_ACCESS_KEY = os.environ['PURPLEBIT_SITE_ENV_AWS_SECRET_ACCESS_KEY']
 AWS_STORAGE_BUCKET_NAME = os.environ['PURPLEBIT_SITE_ENV_AWS_STORAGE_BUCKET_NAME']
+
+# Blog
+# ####
+
+ZINNIA_AUTO_CLOSE_COMMENTS_AFTER = 0
 
 
 # LANGUAGES = [
