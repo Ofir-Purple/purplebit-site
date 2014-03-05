@@ -1,32 +1,58 @@
+"use strict"
 
 purplebit.service('projectDetails', function() {
 
 		// django static file prefix
 		var staticUrl = '/static/';
 
-		// project object
-		this.Project = function(title, subtitle, link, thumb, projectTags) {
-		this.title = title;
-		this.subTitle = subtitle;
-		this.url = link;
-		this.thumb = staticUrl + thumb;
-		this.projectTags = projectTags;
-	};
+		// function append static url for each data image
+		var appendStaticUrl = function(dataImages) {
+			for (var i = 0; i < dataImages.length; i += 1) {
+				dataImages[i] = staticUrl + dataImages[i];
+			}
+			return dataImages;
+		}
 
+		// project object
+		this.Project = function(title, subtitle, link, thumb, projectTags, dataImages) {
+			this.projectId = 0;
+			this.title = title;
+			this.subTitle = subtitle;
+			this.url = link;
+			this.thumb = staticUrl + thumb;
+			this.projectTags = projectTags;
+			this.dataImages = appendStaticUrl(dataImages);
+		};
 
 		// project storage
 		this.projectStorage = [];
 
 		this.addProject = function(proj) {
 			this.projectStorage.push(proj);
+
+			// reallocate id for each project
+			this.reAllocateId();
 		}
 
+		// reallocates id's 
+		this.reAllocateId = function() {
+			for (var i = 0; i < this.projectStorage.length; i +=1 ) {
+				this.projectStorage[i].projectId = i;
+			}
+		}
+
+
+		// projects (objects)
 		var fitblok = new this.Project(
 			'Fitblok',
 			'A marketplace for trainers and trainees >',
 			'https://www.fitblok.com',
 			'main_site/img/projects/fitblok-700-460.jpg',
-			'backend front-end architecture'
+			'backend front-end architecture',
+			['main_site/img/projects/fitblok-540-310.jpg', 
+			'main_site/img/projects/fitblok-search-540-310.jpg', 
+			'main_site/img/projects/fitblok-session-540-310.jpg',
+			'main_site/img/projects/fitblok-profile-540-310.jpg']
 			)
 		this.addProject(fitblok);
 
@@ -35,7 +61,8 @@ purplebit.service('projectDetails', function() {
 			'Internal Management System >',
 			'http://ironsrc.com',
 			'main_site/img/projects/ironsource-logo-350-230.jpg',
-			'backend front-end'
+			'backend front-end',
+			['main_site/img/projects/ironsource-logo-540-310.jpg']
 			)
 		this.addProject(ironSource);
 
@@ -44,7 +71,8 @@ purplebit.service('projectDetails', function() {
 			'AlmaLinks CRM >',
 			'http://almalinks.org/',
 			'main_site/img/projects/almalinks-350-230.jpg',
-			'front-end backend'
+			'front-end backend',
+			['main_site/img/projects/almalinks-540-310.jpg']
 			)
 		this.addProject(almaLinks);
 
@@ -53,7 +81,10 @@ purplebit.service('projectDetails', function() {
 			'Server Backend & More >',
 			'http://www.desti.com',
 			'main_site/img/projects/desti-logo-350-230.png',
-			'backend front-end'
+			'backend front-end',
+			['main_site/img/projects/desti-website-540-310.jpg',
+			 'main_site/img/projects/desti-3-540-310.jpg',
+			 'main_site/img/projects/desti-1-540-310.jpg']
 			)
 		this.addProject(desti);
 
@@ -62,7 +93,8 @@ purplebit.service('projectDetails', function() {
 			'A chat widget for any site >',
 			'http://www.chattybar.com/',
 			'main_site/img/projects/chatty-230-350.jpg',
-			'backend front-end architecture'
+			'backend front-end architecture',
+			['main_site/img/projects/chatty-540-310.jpg']
 			)
 		this.addProject(chattyBar);
 
@@ -71,7 +103,8 @@ purplebit.service('projectDetails', function() {
 			'Data Mining >',
 			'#',
 			'main_site/img/projects/tlv-pubs-350-230.jpg',
-			'backend'
+			'backend',
+			['main_site/img/projects/tlv-pubs-540-310.jpg']
 			)
 		this.addProject(dataMining);
 
@@ -80,7 +113,10 @@ purplebit.service('projectDetails', function() {
 			'Talk @ AngularJS-IL >',
 			'https://github.com/purplebit/Rest-API-AngularJS-Presentation',
 			'main_site/img/projects/angularjsil-350-230.jpg',
-			'training front-end architecture'
+			'training front-end architecture',
+			['main_site/img/projects/angularjsil-540-310.jpg',
+			 'main_site/img/projects/angularjsil-2-540-310.jpg',
+			 'main_site/img/projects/angularjsil-3-540-310.jpg']
 			)
 		this.addProject(restApiPres);
 
@@ -89,7 +125,8 @@ purplebit.service('projectDetails', function() {
 			'Custom, printable puzzles for your students >',
 			'#',
 			'main_site/img/projects/wordsearchgamemaker-350-230.jpg',
-			'front-end'
+			'front-end',
+			['main_site/img/projects/wordsearchgamemaker-540-310.jpg']
 			)
 		this.addProject(wordGame);
 
@@ -98,7 +135,10 @@ purplebit.service('projectDetails', function() {
 			'amazon.com >',
 			'#',
 			'main_site/img/projects/project-thumb.jpg',
-			'front-end'
+			'front-end',
+			['main_site/img/projects/project-slide.jpg',
+			'main_site/img/projects/project-slide.jpg',
+			'main_site/img/projects/project-slide.jpg']
 			)
 		this.addProject(project9);
 })

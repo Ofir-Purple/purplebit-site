@@ -286,7 +286,7 @@
 					<!-- ==============================================
 					SINGLE PROJECT ITEM
 					=============================================== -->	
-					<a class="project-item {$ project.projectTags $}" data-images="{% static 'main_site/img/projects/fitblok-540-310.jpg' %}, {% static 'main_site/img/projects/fitblok-search-540-310.jpg' %}, {% static 'main_site/img/projects/fitblok-session-540-310.jpg' %}, {% static 'main_site/img/projects/fitblok-profile-540-310.jpg' %}">
+					<a class="project-item {$ project.projectTags $}" data-images="{$ projectImages(project.projectId) $}">
 						
 						<img class="img-responsive project-image" ng-src="{$ project.thumb $}"  alt=""><!--Project thumb -->
 						
