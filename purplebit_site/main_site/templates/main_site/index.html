@@ -280,13 +280,13 @@
 			<div class="container masonry-wrapper scrollimation fade-in" ng-controller="projectListCtrl">
 			
 				<div id="projects-container">
-				
+
 					<div class="" ng-repeat="project in projects">
 
 					<!-- ==============================================
 					SINGLE PROJECT ITEM
 					=============================================== -->	
-					<a class="project-item {$ project.projectTags $}" data-images="{$ projectImages(project.projectId) $}">
+					<a project-view class="project-item {$ project.projectTags $}" data-images="{$ projectImages(project.projectId) $}">
 						
 						<img class="img-responsive project-image" ng-src="{$ project.thumb $}"  alt=""><!--Project thumb -->
 						
@@ -316,6 +316,7 @@
 						</div>	
 					</a>
 				</div>
+
 					<!-- ==============================================
 					END PROJECT ITEM
 					=============================================== -->

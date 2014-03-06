@@ -5,7 +5,7 @@ purplebit.controller('projectListCtrl', function($scope, projectDetails) {
 
 	// returns string of project images for data-image tag
 	$scope.projectImages = function(projectId) {
-		return $scope.projects[projectId].dataImages.join(", ");
+		return $scope.projects[projectId].dataImages.join(",");
 	}
 
 })
