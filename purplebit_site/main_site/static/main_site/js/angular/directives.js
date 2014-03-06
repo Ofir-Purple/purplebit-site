@@ -1,5 +1,16 @@
 // directives
 
+// create url attribute to store the url (workaround for prevent default behavior on anchor tag)
+purplebit.directive('project-url', function() {
+	return {
+		restrict: "A",
+		scope: {
+			url: "@"
+		}
+	}
+})
+
+// project view directive (modified designr.js)
 purplebit.directive('projectView', function() {
 	return {
 		restrict: "A",
@@ -8,7 +19,7 @@ purplebit.directive('projectView', function() {
 					// TODO: prevent default behavior
 
 					title = element.find('.project-title').text(),
-					link = element.attr('href'),
+					link = element.attr('project-url'),
 					descr = element.find('.project-description').html(),
 					slidesHtml = '<ul class="slides">',
 					slides = element.data('images').split(',');
