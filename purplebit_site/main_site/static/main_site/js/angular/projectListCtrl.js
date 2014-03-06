@@ -1,7 +1,7 @@
 
-purplebit.controller('projectListCtrl', function($scope, $sanitize, projectDetails) {
+purplebit.controller('projectListCtrl', function($scope, $sanitize, projectDetailsSrv) {
 	
-	$scope.projects = projectDetails.projectStorage;
+	$scope.projects = projectDetailsSrv.projectStorage;
 
 	// returns string of project images for data-image tag
 	$scope.projectImages = function(projectId) {

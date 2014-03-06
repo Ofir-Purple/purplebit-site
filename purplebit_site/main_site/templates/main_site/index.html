@@ -203,7 +203,7 @@
 		<!-- ==============================================
 		SKILLS
 		=============================================== -->			
-		<section id="skills">
+		<section id="skills" ng-controller="managersCtrl">
 		
 			<div class="container">
 
@@ -215,24 +215,16 @@
 						<span class="chart" data-percent="100"><img class="img-responsive img-circle img-center" src="{% static 'main_site/img/about.jpg' %}" alt=""></span>
 						<h2 class="text-center">John Doe</h2>
 					</div> -->
-					<div class="col-sm-6 col-md-3 col-md-offset-3 text-center">
-						<span class="chart" data-percent="100"><img class="img-responsive img-circle img-center" src="{% static 'main_site/img/about.jpg' %}" alt=""></span>
-						<h2 class="text-center">Edan Maor <small>CEO</small></h2>
-						<ul class="text-center socials">
-							<li><a href="https://www.facebook.com/edan.maor" target="_blank"><i class="icon-facebook-sign"></i></a></li>
-							<li><a href="http://www.linkedin.com/in/edanmaor" target="_blank"><i class="icon-linkedin-sign"></i></a></li>
-						</ul>
-						<p class="text-justified">Edan has been programming since the age of 12. He has been working with Python for the last 9 years. After completing "Mamram" programming course in the IDF, he served as a programmer in an elite cyber unit and was promoted to a team leader position. Later on, he turned to completing his BA degree in Computer Science, and opening a small start-up company. Today he is at the helm of Purple Bit.</p>
-						<p></p>
-					</div>
-					<div class="col-sm-6 col-md-3 text-center">
-						<span class="chart" data-percent="100"><img class="img-responsive img-circle img-center" src="{% static 'main_site/img/ofir-circle.png' %}" alt=""></span>
-						<h2 class="text-center">Ofir Ovadia <small>CTO</small></h2>
-						<ul class="text-center socials">
-							<li><a href="https://www.facebook.com/ofiro" target="_blank"><i class="icon-facebook-sign"></i></a></li>
-							<li><a href="http://www.linkedin.com/in/ofirovadia" target="_blank"><i class="icon-linkedin-sign"></i></a></li>
-						</ul>
-						<p class="text-justified">With over 10 years of hands-on experience in software development of which 4 in Python, Ofir is the CTO and the technological authority at Purple Bit. His experience includes, but is not limited to: The IDF’s "Mamram" programming course; leading a software development team in one of the IDF’s top information security units; and excelling in his Computer Science BA degree studies.</p>
+					<div ng-repeat="manager in managers">
+						<div class="col-sm-6 col-md-3 text-center">
+							<span class="chart" data-percent="100"><img class="img-responsive img-circle img-center" ng-src="{$ manager.picture $}" alt=""></span>
+							<h2 class="text-center">{$ manager.fullName $} <small>{$ manager.position $}</small></h2>
+							<ul class="text-center socials">
+								<li><a href="{$ manager.facebook $}" target="_blank"><i class="icon-facebook-sign"></i></a></li>
+								<li><a href="{$ manager.linkedin $}" target="_blank"><i class="icon-linkedin-sign"></i></a></li>
+							</ul>
+							<p class="text-justified">{$ manager.about $}</p>
+						</div>
 					</div>
 					<!-- <div class="col-sm-6 col-md-3 text-center">
 						<span class="chart" data-percent="100"><img class="img-responsive img-circle img-center" src="{% static 'main_site/img/about.jpg' %}" alt=""></span>
@@ -523,9 +515,14 @@
 		<script src="{% static 'main_site/js/angular-1.2.14.min.js' %}"></script>
 		<script src="{% static 'main_site/js/angular-sanitize.min.js' %}"></script>
 		<script src="{% static 'main_site/js/angular/purplebit.js' %}"></script>
-		<script src="{% static 'main_site/js/angular/projectListCtrl.js' %}"></script>
-		<script src="{% static 'main_site/js/angular/services.js' %}"></script>
+		<script src="{% static 'main_site/js/angular/configSrv.js' %}"></script>
 		<script src="{% static 'main_site/js/angular/directives.js' %}"></script>
+		<script src="{% static 'main_site/js/angular/projectListCtrl.js' %}"></script>
+		<script src="{% static 'main_site/js/angular/projectDetailsSrv.js' %}"></script>
+		<script src="{% static 'main_site/js/angular/managementSrv.js' %}"></script>
+		<script src="{% static 'main_site/js/angular/managersCtrl.js' %}"></script>
+		
+		
 		
 	</body>
 	

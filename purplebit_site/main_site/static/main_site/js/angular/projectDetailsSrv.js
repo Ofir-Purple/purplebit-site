@@ -1,9 +1,6 @@
 "use strict";
 
-purplebit.service('projectDetails', function($sanitize) {
-
-		// django static file prefix
-		var staticUrl = '/static/';
+purplebit.service('projectDetailsSrv', function($sanitize, configSrv) {
 
 		// function append static url for each data image
 		var appendStaticUrl = function(dataImages) {
@@ -12,7 +9,7 @@ purplebit.service('projectDetails', function($sanitize) {
 
 			// append to each image static url
 			for (var i = 0; i < dataImages.length; i += 1) {
-				dataImages[i] = staticUrl + dataImages[i];
+				dataImages[i] = configSrv.staticUrl + dataImages[i];
 			}
 			return dataImages;
 		}
@@ -26,8 +23,8 @@ purplebit.service('projectDetails', function($sanitize) {
 			this.technologies = technologies;
 			this.testimonial = testimonial;
 			this.url = link;
-			this.thumb = thumb === '' ? thumb : staticUrl + thumb;
-			this.logo = logo === '' ? logo : staticUrl + logo;
+			this.thumb = thumb === '' ? thumb : configSrv.staticUrl + thumb;
+			this.logo = logo === '' ? logo : configSrv.staticUrl + logo;
 			this.projectTags = projectTags;
 			this.dataImages = appendStaticUrl(dataImages);
 		};
@@ -66,8 +63,7 @@ purplebit.service('projectDetails', function($sanitize) {
 			'main_site/img/projects/fitblok-session-540-310.jpg',
 			'main_site/img/projects/fitblok-profile-540-310.jpg']
 			)
-		this.addProject(fitblok);
-
+		
 		var ironSource = new this.Project(
 			'ironSource',
 			'Internal Management System >',
@@ -80,8 +76,7 @@ purplebit.service('projectDetails', function($sanitize) {
 			'backend front-end',
 			['main_site/img/projects/ironsource-logo-540-310.jpg']
 			)
-		this.addProject(ironSource);
-
+		
 		var almaLinks = new this.Project(
 			'AlmaLinks',
 			'AlmaLinks CRM >',
@@ -94,8 +89,7 @@ purplebit.service('projectDetails', function($sanitize) {
 			'front-end backend',
 			['main_site/img/projects/almalinks-540-310.jpg']
 			)
-		this.addProject(almaLinks);
-
+		
 		var desti = new this.Project(
 			'Desti',
 			'Server Backend & More >',
@@ -110,8 +104,7 @@ purplebit.service('projectDetails', function($sanitize) {
 			 'main_site/img/projects/desti-3-540-310.jpg',
 			 'main_site/img/projects/desti-1-540-310.jpg']
 			)
-		this.addProject(desti);
-
+		
 		var chattyBar = new this.Project(
 			'Chatty',
 			'A chat widget for any site >',
@@ -124,8 +117,7 @@ purplebit.service('projectDetails', function($sanitize) {
 			'backend front-end architecture',
 			['main_site/img/projects/chatty-540-310.jpg']
 			)
-		this.addProject(chattyBar);
-
+		
 		var dataMining = new this.Project(
 			'Tel Aviv Pub Data Mining',
 			'Data Mining >',
@@ -138,8 +130,7 @@ purplebit.service('projectDetails', function($sanitize) {
 			'backend',
 			['main_site/img/projects/tlv-pubs-540-310.jpg']
 			)
-		this.addProject(dataMining);
-
+		
 		var restApiPres = new this.Project(
 			'REST API w/ AngularJS',
 			'Talk @ AngularJS-IL >',
@@ -154,7 +145,6 @@ purplebit.service('projectDetails', function($sanitize) {
 			 'main_site/img/projects/angularjsil-2-540-310.jpg',
 			 'main_site/img/projects/angularjsil-3-540-310.jpg']
 			)
-		this.addProject(restApiPres);
 
 		var wordGame = new this.Project(
 			'Word Search Game Maker',
@@ -168,8 +158,7 @@ purplebit.service('projectDetails', function($sanitize) {
 			'front-end',
 			['main_site/img/projects/wordsearchgamemaker-540-310.jpg']
 			)
-		this.addProject(wordGame);
-
+		
 		var project9 = new this.Project(
 			'Project 9',
 			'amazon.com >',
@@ -184,5 +173,16 @@ purplebit.service('projectDetails', function($sanitize) {
 			'main_site/img/projects/project-slide.jpg',
 			'main_site/img/projects/project-slide.jpg']
 			)
+		
+
+		// populate projects lists
+		this.addProject(fitblok);
+		this.addProject(ironSource);
+		this.addProject(almaLinks);
+		this.addProject(desti);
+		this.addProject(chattyBar);
+		this.addProject(dataMining);
+		this.addProject(restApiPres);
+		this.addProject(wordGame);
 		this.addProject(project9);
 })
