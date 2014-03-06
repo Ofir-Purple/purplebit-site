@@ -32,6 +32,7 @@ purplebit.service('projectDetailsSrv', function($sanitize, configSrv) {
 		// project storage
 		this.projectStorage = [];
 
+		// add new project
 		this.addProject = function(proj) {
 			this.projectStorage.push(proj);
 

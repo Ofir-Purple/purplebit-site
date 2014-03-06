@@ -16,8 +16,7 @@ purplebit.directive('projectView', function() {
 		restrict: "A",
 		link: function(scope, element, attrs) {
 				$(element).click(function() {
-					// TODO: prevent default behavior
-
+					
 					title = element.find('.project-title').text(),
 					link = element.attr('project-url'),
 					descr = element.find('.project-description').html(),

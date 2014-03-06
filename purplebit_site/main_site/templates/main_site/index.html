@@ -216,7 +216,7 @@
 						<h2 class="text-center">John Doe</h2>
 					</div> -->
 					<div ng-repeat="manager in managers">
-						<div class="col-sm-6 col-md-3 text-center">
+						<div class="col-sm-6 col-md-3 col-md-push-3 text-center">
 							<span class="chart" data-percent="100"><img class="img-responsive img-circle img-center" ng-src="{$ manager.picture $}" alt=""></span>
 							<h2 class="text-center">{$ manager.fullName $} <small>{$ manager.position $}</small></h2>
 							<ul class="text-center socials">
@@ -515,7 +515,6 @@
 		<script src="{% static 'main_site/js/angular-1.2.14.min.js' %}"></script>
 		<script src="{% static 'main_site/js/angular-sanitize.min.js' %}"></script>
 		<script src="{% static 'main_site/js/angular/purplebit.js' %}"></script>
-		<script src="{% static 'main_site/js/angular/configSrv.js' %}"></script>
 		<script src="{% static 'main_site/js/angular/directives.js' %}"></script>
 		<script src="{% static 'main_site/js/angular/projectListCtrl.js' %}"></script>
 		<script src="{% static 'main_site/js/angular/projectDetailsSrv.js' %}"></script>
