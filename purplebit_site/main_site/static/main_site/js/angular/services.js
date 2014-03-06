@@ -14,11 +14,13 @@ purplebit.service('projectDetails', function($sanitize) {
 		}
 
 		// project object
-		this.Project = function(title, subtitle, desc, link, thumb, projectTags, dataImages) {
+		this.Project = function(title, subtitle, desc, technologies, testimonial, link, thumb, projectTags, dataImages) {
 			this.projectId = 0;
 			this.title = title;
 			this.subTitle = subtitle;
 			this.desc = desc;
+			this.technologies = techologies;
+			this.testimonial = testimonial;
 			this.url = link;
 			this.thumb = staticUrl + thumb;
 			this.projectTags = projectTags;
@@ -48,6 +50,7 @@ purplebit.service('projectDetails', function($sanitize) {
 			'Fitblok',
 			'A marketplace for trainers and trainees >',
 			'<p>Fitblok is a <strong>Single Page Web-Application</strong> and an <strong>iPad</strong> application that delivers video lessons from trainers to trainees.</p><p>Fitblok provides users with a gym-like experience and enables fitness trainers to develop their own brand and followers within the application. This vision was drilled-down by Purple Bit into technical details, through all the technical decisions and finally into a working, operational product. The application offers features such as managing the trainers&#8217; trainee community and scheduling <strong>video streaming</strong> training sessions online. In addition, the application offers a wide variety of training styles with an intuitive search mechanism and <strong>reputation system</strong> to back it up. Finally, all <strong>billing and accounting</strong> is done through the application.</p><p>Fitblok&#8217;s <strong>RESTful</strong> backend is developed using <strong>Django</strong>, the videos are streamed using <strong>Wowza</strong> video servers over <strong>Amazon EC2</strong> and the front-end itself is developed using <strong>AngularJS</strong>.</p>',
+			''
 			'https://www.fitblok.com',
 			'main_site/img/projects/fitblok-700-460.jpg',
 			'backend front-end architecture',
