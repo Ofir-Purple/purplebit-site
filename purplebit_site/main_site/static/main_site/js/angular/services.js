@@ -1,6 +1,6 @@
 "use strict"
 
-purplebit.service('projectDetails', function() {
+purplebit.service('projectDetails', function($sanitize) {
 
 		// django static file prefix
 		var staticUrl = '/static/';
@@ -14,10 +14,11 @@ purplebit.service('projectDetails', function() {
 		}
 
 		// project object
-		this.Project = function(title, subtitle, link, thumb, projectTags, dataImages) {
+		this.Project = function(title, subtitle, desc, link, thumb, projectTags, dataImages) {
 			this.projectId = 0;
 			this.title = title;
 			this.subTitle = subtitle;
+			this.desc = desc;
 			this.url = link;
 			this.thumb = staticUrl + thumb;
 			this.projectTags = projectTags;
@@ -46,6 +47,7 @@ purplebit.service('projectDetails', function() {
 		var fitblok = new this.Project(
 			'Fitblok',
 			'A marketplace for trainers and trainees >',
+			'<p>Fitblok is a <strong>Single Page Web-Application</strong> and an <strong>iPad</strong> application that delivers video lessons from trainers to trainees.</p><p>Fitblok provides users with a gym-like experience and enables fitness trainers to develop their own brand and followers within the application. This vision was drilled-down by Purple Bit into technical details, through all the technical decisions and finally into a working, operational product. The application offers features such as managing the trainers&#8217; trainee community and scheduling <strong>video streaming</strong> training sessions online. In addition, the application offers a wide variety of training styles with an intuitive search mechanism and <strong>reputation system</strong> to back it up. Finally, all <strong>billing and accounting</strong> is done through the application.</p><p>Fitblok&#8217;s <strong>RESTful</strong> backend is developed using <strong>Django</strong>, the videos are streamed using <strong>Wowza</strong> video servers over <strong>Amazon EC2</strong> and the front-end itself is developed using <strong>AngularJS</strong>.</p>',
 			'https://www.fitblok.com',
 			'main_site/img/projects/fitblok-700-460.jpg',
 			'backend front-end architecture',
@@ -59,6 +61,7 @@ purplebit.service('projectDetails', function() {
 		var ironSource = new this.Project(
 			'ironSource',
 			'Internal Management System >',
+			'empty',
 			'http://ironsrc.com',
 			'main_site/img/projects/ironsource-logo-350-230.jpg',
 			'backend front-end',
@@ -69,6 +72,7 @@ purplebit.service('projectDetails', function() {
 		var almaLinks = new this.Project(
 			'AlmaLinks',
 			'AlmaLinks CRM >',
+			'empty',
 			'http://almalinks.org/',
 			'main_site/img/projects/almalinks-350-230.jpg',
 			'front-end backend',
@@ -79,6 +83,7 @@ purplebit.service('projectDetails', function() {
 		var desti = new this.Project(
 			'Desti',
 			'Server Backend & More >',
+			'empty',
 			'http://www.desti.com',
 			'main_site/img/projects/desti-logo-350-230.png',
 			'backend front-end',
@@ -91,6 +96,7 @@ purplebit.service('projectDetails', function() {
 		var chattyBar = new this.Project(
 			'Chatty',
 			'A chat widget for any site >',
+			'empty',
 			'http://www.chattybar.com/',
 			'main_site/img/projects/chatty-230-350.jpg',
 			'backend front-end architecture',
@@ -101,6 +107,7 @@ purplebit.service('projectDetails', function() {
 		var dataMining = new this.Project(
 			'Tel Aviv Pub Data Mining',
 			'Data Mining >',
+			'empty',
 			'#',
 			'main_site/img/projects/tlv-pubs-350-230.jpg',
 			'backend',
@@ -111,6 +118,7 @@ purplebit.service('projectDetails', function() {
 		var restApiPres = new this.Project(
 			'REST API w/ AngularJS',
 			'Talk @ AngularJS-IL >',
+			'empty',
 			'https://github.com/purplebit/Rest-API-AngularJS-Presentation',
 			'main_site/img/projects/angularjsil-350-230.jpg',
 			'training front-end architecture',
@@ -123,6 +131,7 @@ purplebit.service('projectDetails', function() {
 		var wordGame = new this.Project(
 			'Word Search Game Maker',
 			'Custom, printable puzzles for your students >',
+			'empty',
 			'#',
 			'main_site/img/projects/wordsearchgamemaker-350-230.jpg',
 			'front-end',
@@ -133,6 +142,7 @@ purplebit.service('projectDetails', function() {
 		var project9 = new this.Project(
 			'Project 9',
 			'amazon.com >',
+			'empty',
 			'#',
 			'main_site/img/projects/project-thumb.jpg',
 			'front-end',

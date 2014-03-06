@@ -1,5 +1,5 @@
 
-purplebit = angular.module('purplebit', []);
+purplebit = angular.module('purplebit', ['ngSanitize']);
 
 
 purplebit.config(function($interpolateProvider) {

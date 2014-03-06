@@ -298,12 +298,7 @@
 						<!--==== Project Preview HTML ====-->
 						
 						<div class="sr-only project-description">
-							<p>Fitblok is a <strong>Single Page Web-Application</strong> and an <strong>iPad</strong> application that delivers video lessons from trainers to trainees.</p>
-
-							<p>Fitblok provides users with a gym-like experience and enables fitness trainers to develop their own brand and followers within the application. This vision was drilled-down by Purple Bit into technical details, through all the technical decisions and finally into a working, operational product. The application offers features such as managing the trainers’ trainee community and scheduling <strong>video streaming</strong> training sessions online. In addition, the application offers a wide variety of training styles with an intuitive search mechanism and <strong>reputation system</strong> to back it up. Finally, all <strong>billing and accounting</strong> is done through the application.</p>
-
-							<p>Fitblok's <strong>RESTful</strong> backend is developed using <strong>Django</strong>, the videos are streamed using <strong>Wowza</strong> video servers over <strong>Amazon EC2</strong> and the front-end itself is developed using <strong>AngularJS</strong>.</p>
-
+							<div ng-bind-html="project.desc"></div>
 							<img class="img-responsive img-center" src="{% static 'main_site/img/projects/fitblok-logo.png' %}"  alt="">
 
 							<div class="row">
@@ -526,6 +521,7 @@
 
 		<!-- angularjs -->
 		<script src="{% static 'main_site/js/angular-1.2.14.min.js' %}"></script>
+		<script src="{% static 'main_site/js/angular-sanitize.min.js' %}"></script>
 		<script src="{% static 'main_site/js/angular/purplebit.js' %}"></script>
 		<script src="{% static 'main_site/js/angular/projectListCtrl.js' %}"></script>
 		<script src="{% static 'main_site/js/angular/services.js' %}"></script>
