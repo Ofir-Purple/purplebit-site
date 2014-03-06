@@ -1,5 +1,5 @@
 
-purplebit.service("testimonialSrv", function() {
+purplebit.service("testimonialSrv", function($sanitize) {
 	
 
 	// object
@@ -12,9 +12,8 @@ purplebit.service("testimonialSrv", function() {
 	this.testimonials  = [];
 
 	// add new testimonial to list
-	this.addTestimonial = function(text, author) {
-		var testimon = new this.Testimonial(text, author);
-		this.Testimonial.push(testimon);
+	this.addTestimonial = function(testimon) {
+		this.testimonials.push(testimon);
 	}
 
 	// creating testimonials
@@ -23,5 +22,12 @@ purplebit.service("testimonialSrv", function() {
 		'Fitblok’s CEO'
 		)
 
-	var 
+	var desti = new this.Testimonial(
+		'"Purple Bit were <strong>available and flexible</strong> with timing issues, and the whole logistic process was good. The team was <strong>very accommodating to our needs</strong> regarding timing, office hours, etc.<br /><br />The team came with an <strong>excellent approach and can-do attitude</strong>. It was a <strong>joy</strong> to work with them, as this is really not trivial for people who are paid hourly. This is one of the important reasons <strong>we&#8217;d want to work with Purple Bit again</strong>."',
+		'Imri Goldberg, CTO at Desti.com'
+	)
+
+	// adding testimonials
+	this.addTestimonial(fitblok);
+	this.addTestimonial(desti);
 })

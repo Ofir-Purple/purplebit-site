@@ -356,17 +356,17 @@
 		=============================================== -->	
 		<section id="testimonials" ng-controller="testimonialCtrl">
 			<div class="container">
-				<div class="row scrollimation fade-in">
+				<div class="row">
 					<div class="col-sm-1 twitter-icon">
 						<i class="icon-thumbs-up icon-3x"></i>
 					</div>
 					<div class="col-sm-11">
-						<div id="testimonials-slider" class="flexslider" >
+						<div class="">
 							<ul class="slides">
 								<li ng-repeat="testimonial in testimonials">
-									<p class="testimonial">{$ testimonial.text $}</p>
+									<p class="testimonial" ng-bind-html="testimonial.text"></p>
 
-									<p class="testimonialBy">- {$ testimonial.author $}</p>
+									<p class="testimonialBy" ng-bind-html="testimonial.author">-</p>
 								</li>
 							</ul>
 						</div>
