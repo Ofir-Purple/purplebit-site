@@ -299,14 +299,14 @@
 						
 						<div class="sr-only project-description">
 							<div ng-bind-html="project.desc"></div>
-							<img class="img-responsive img-center" src="{% static 'main_site/img/projects/fitblok-logo.png' %}"  alt="">
+							<img class="img-responsive img-center" ng-hide="project.desc == ''" ng-src="{$ project.logo $}"  alt="">
 
-							<div class="row">
-								<div class="col-sm-3 col-md-2"><p><strong>Technologies:</strong></p></div><div class="col-sm-9 col-md-10"><p>{{ project.techologies }}</div>
+							<div class="row" ng-hide="project.technologies == ''">
+								<div class="col-sm-3 col-md-2"><p><strong>Technologies:</strong></p></div><div class="col-sm-9 col-md-10" ng-bind-html="project.technologies"></div>
 							</div>
 							
-							<div class="row">
-								<div class="col-sm-3 col-md-2"><p><strong>Testimonial:</strong></p></div><div class="col-sm-9 col-md-10"> {{ project.testimonial }} </div>
+							<div class="row" ng-hide="project.testimonial == ''">
+								<div class="col-sm-3 col-md-2"><p><strong>Testimonial:</strong></p></div><div class="col-sm-9 col-md-10" ng-bind-html="project.testimonial"></div>
 							</div>
 						</div>	
 					</a>
