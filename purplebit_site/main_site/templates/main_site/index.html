@@ -240,7 +240,7 @@
 		<!-- ==============================================
 		PORTFOLIO
 		=============================================== -->		
-		<section  id="portfolio">
+		<section  id="portfolio" ng-controller="projectListCtrl">
 		
 			<div id="portfolio-header" class="text-center">
 				
@@ -269,16 +269,15 @@
 				
 			</div><!--End portfolio header -->
 			
-			<div class="container masonry-wrapper scrollimation fade-in" ng-controller="projectListCtrl">
+			<div class="container masonry-wrapper scrollimation fade-in">
 			
 				<div id="projects-container">
 
-					<div class="" ng-repeat="project in projects">
-
+					<projects>
 					<!-- ==============================================
 					SINGLE PROJECT ITEM
 					=============================================== -->	
-					<a project-view project-url="{$ project.url $}" ng-click="" class="project-item {$ project.projectTags $}" data-images="{$ projectImages(project.projectId) $}">
+					<a class="project-item {$ project.projectTags $}" project-url="{$ project.url $}" data-images="{$ projectImages(project.projectId) $}" ng-repeat="project in projects">
 						
 						<img class="img-responsive project-image" ng-src="{$ project.thumb $}"  alt=""><!--Project thumb -->
 						
@@ -302,7 +301,7 @@
 							</div>
 						</div>	
 					</a>
-				</div>
+				</projects>
 
 					<!-- ==============================================
 					END PROJECT ITEM

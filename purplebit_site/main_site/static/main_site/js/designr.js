@@ -115,10 +115,14 @@ $(document).ready(function() {
 	});
 
 
+/* NOTE: used as an angularjs directive */
 	/*============================================
 	Project Preview
 	==============================================*/
-	$('.project-item').click(function(e){
+
+	/*
+	$('.project-item').on('click', function(e){
+		console.log(e);
 		e.preventDefault();
 
 		var elem = $(this),
@@ -170,12 +174,12 @@ $(document).ready(function() {
 			.html('')
 			.flexslider('destroy');
 	});
-	
+*/ 
 
+/* NOTE: used as an angularjs directive */
 	/*============================================
 	Testimonials Functions
 	==============================================*/
-/* used as an angularjs directive */
 /*
 	$('#testimonials-slider').flexslider({
 		prevText: '<i class="icon-angle-left"></i>',
