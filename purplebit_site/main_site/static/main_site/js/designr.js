@@ -175,7 +175,8 @@ $(document).ready(function() {
 	/*============================================
 	Testimonials Functions
 	==============================================*/
-	
+/* used as an angularjs directive */
+/*
 	$('#testimonials-slider').flexslider({
 		prevText: '<i class="icon-angle-left"></i>',
 		nextText: '<i class="icon-angle-right"></i>',
@@ -186,6 +187,7 @@ $(document).ready(function() {
 		pauseOnHover: true,
 		smoothHeight: false
 	});
+*/
 
 	/*============================================
 	Resize Functions

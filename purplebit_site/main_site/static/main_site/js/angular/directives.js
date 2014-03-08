@@ -58,3 +58,36 @@ purplebit.directive('projectView', function() {
 			}
 	}
 })
+
+
+// testimonial slider
+purplebit.directive('slides', function() {
+	return {
+		restrict: "A",
+		scope: {
+			slideContainer: "@",
+			slideList: "@"
+		},
+		link: function(scope, element, attrs) {
+
+		$(document).ready(function() {
+			$('#' + scope.slideContainer).addClass('flexslider');
+			$('#' + scope.slideList).addClass('slides');
+
+			$('#' + scope.slideContainer).flexslider({
+				prevText: '<i class="icon-angle-left"></i>',
+				nextText: '<i class="icon-angle-right"></i>',
+				slideshowSpeed: 5000,
+				useCSS: true,
+				controlNav: false, 
+				pauseOnAction: false, 
+				pauseOnHover: true,
+				smoothHeight: false
+			});
+
+	}); // ready
+
+		}
+	}
+})
+
