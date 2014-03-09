@@ -377,7 +377,7 @@
 		<!-- ==============================================
 		CONTACT
 		=============================================== -->	
-		<section  id="contact">
+		<section  id="contact" ng-controller="contactCtrl">
 		
 			<div class="container">
 			
@@ -413,7 +413,7 @@
 					
 					<!--=== Contact Form ===-->
 
-					<form id="contact-form" class="col-sm-7 scrollimation fade-left" action="{% url 'backend:contact' %}" method="post" novalidate>
+					<form name="contactForm" id="contact-form" class="col-sm-7 scrollimation fade-left" ng-submit="submit()" novalidate>
 
 						{% csrf_token %}
 						
@@ -421,15 +421,18 @@
 						  <label class="control-label" for="contact-name">Name</label>
 						  <div class="controls">
 							<i class="icon-user"></i>
-							<input id="contact-name" name="contactName" placeholder="My name is..." class="form-control input-lg requiredField" type="text" data-error-empty="Please enter your name">
+							<input id="contact-name" name="contactName" placeholder="My name is..." class="form-control input-lg" type="text" ng-model="contact.name" required ng-blur="tryPristine()">
+							<span class="error-message" ng-show="contactForm.contactName.$error.required && contactForm.contactName.$dirty">Please enter your name.</span>
 						  </div>
 						</div><!-- End name input -->
 						
 						<div class="form-group">
 						  <label class="control-label" for="contact-mail">Email</label>
-						  <div class=" controls">
+						  <div class="controls">
 							<i class="icon-envelope"></i>
-							<input id="contact-mail" name="email" placeholder="Please respond at..." class="form-control input-lg requiredField" type="email" data-error-empty="Please enter your email" data-error-invalid="Invalid email address">
+							<input id="contact-mail" name="contactEmail" placeholder="Please respond at..." class="form-control input-lg" type="email" ng-model="contact.email" required ng-blur="tryPristine()">
+							<span class="error-message" ng-show="contactForm.contactEmail.$error.required && contactForm.contactEmail.$dirty">Please enter your email</span>
+							<span class="error-message" ng-show="contactForm.contactEmail.$error.email">Invalid email address</span>
 						  </div>
 						</div><!-- End email input -->
 						
@@ -437,12 +440,12 @@
 						  <label class="control-label" for="contact-message">Message</label>
 							<div class="controls">
 								<i class="icon-comment"></i>
-								<textarea id="contact-message" name="comments"  placeholder="I wanna talk about..." class="form-control input-lg requiredField" rows="5" data-error-empty="Please enter your message"></textarea>
+								<textarea id="contact-message" name="contactMessage"  placeholder="I wanna talk about..." class="form-control input-lg" rows="5" ng-model="contact.message" required ng-blur="tryPristine()"></textarea>
+								<span class="error-message" ng-show="contactForm.contactMessage.$error.required && contactForm.contactMessage.$dirty">Please enter your message</span>
 							</div>
 						</div><!-- End textarea -->
 						
-						<p><button name="submit" type="submit" class="btn btn-theme btn-lg" data-error-message="Error!" data-sending-message="Sending..." data-ok-message="Message Sent"><i class="icon-location-arrow"></i>Send Message</button></p>
-						<input type="hidden" name="submitted" id="submitted" value="true" />
+						<p><button name="submit" type="submit" class="btn btn-theme btn-lg" ng-disabled="contactForm.$invalid"><i class="icon-location-arrow"></i>Send Message</button></p>
 						
 					</form><!-- End contact-form -->
 				  
@@ -496,7 +499,7 @@
 		<script src="{% static 'main_site/js/jquery.masonry.min.js' %}"></script>
 		<script src="{% static 'main_site/js/waypoints.min.js' %}"></script>
 		<script src="{% static 'main_site/js/jquery.easypiechart.js' %}"></script>
-		<script src="{% static 'main_site/js/contact.js' %}"></script>
+		<!-- <script src="{% static 'main_site/js/contact.js' %}"></script> -->
 		<script src="{% static 'main_site/js/designr.js' %}"></script>
 
 		<!-- angularjs -->
@@ -510,6 +513,7 @@
 		<script src="{% static 'main_site/js/angular/managersCtrl.js' %}"></script>
 		<script src="{% static 'main_site/js/angular/testimonialSrv.js' %}"></script>
 		<script src="{% static 'main_site/js/angular/testimonialCtrl.js' %}"></script>
+		<script src="{% static 'main_site/js/angular/contactCtrl.js' %}"></script>
 		
 		
 		
