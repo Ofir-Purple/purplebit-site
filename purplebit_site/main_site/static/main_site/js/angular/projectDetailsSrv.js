@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module('purplebit').service('projectDetailsSrv', function($sanitize, configSrv) {
+angular.module('purplebit').service('projectDetailsSrv', function($sanitize, STATIC_URL) {
 
 		// function append static url for each data image
 		var appendStaticUrl = function(dataImages) {
@@ -9,7 +9,7 @@ angular.module('purplebit').service('projectDetailsSrv', function($sanitize, con
 
 			// append to each image static url
 			for (var i = 0; i < dataImages.length; i += 1) {
-				dataImages[i] = configSrv.staticUrl + dataImages[i];
+				dataImages[i] = STATIC_URL + dataImages[i];
 			}
 			return dataImages;
 		}
@@ -23,8 +23,8 @@ angular.module('purplebit').service('projectDetailsSrv', function($sanitize, con
 			this.technologies = technologies;
 			this.testimonial = testimonial;
 			this.url = link;
-			this.thumb = thumb === '' ? thumb : configSrv.staticUrl + thumb;
-			this.logo = logo === '' ? logo : configSrv.staticUrl + logo;
+			this.thumb = thumb === '' ? thumb : thumb;
+			this.logo = logo === '' ? 'main_site/img/logo.png' : logo; // by default load compaty logo
 			this.projectTags = projectTags;
 			this.dataImages = appendStaticUrl(dataImages);
 		};

@@ -44,11 +44,27 @@
 		
 		<script type="text/javascript" src="{% static 'main_site/js/libs/modernizr.min.js' %}"></script>
 		
+
+		<!-- angularjs -->
+		<script src="{% static 'main_site/js/angular-1.2.14.min.js' %}"></script>
+		<script src="{% static 'main_site/js/angular-sanitize.min.js' %}"></script>
+		<script src="{% static 'main_site/js/angular/purplebit.js' %}"></script>
+		<script src="{% static 'main_site/js/angular/directives.js' %}"></script>
+		<script src="{% static 'main_site/js/angular/projectListCtrl.js' %}"></script>
+		<script src="{% static 'main_site/js/angular/projectDetailsSrv.js' %}"></script>
+		<script src="{% static 'main_site/js/angular/managementSrv.js' %}"></script>
+		<script src="{% static 'main_site/js/angular/managersCtrl.js' %}"></script>
+		<script src="{% static 'main_site/js/angular/testimonialSrv.js' %}"></script>
+		<script src="{% static 'main_site/js/angular/testimonialCtrl.js' %}"></script>
+		<script src="{% static 'main_site/js/angular/contactCtrl.js' %}"></script>
 		
+		<script type="text/javascript">
+			angular.module('purplebit').constant('STATIC_URL', "{% static '' %}");
+		</script>
+
 	</head>
   
 	<body data-spy="scroll" data-target="#main-nav" data-offset="200" ng-app="purplebit">
-	
 		<!-- ==============================================
 		MAIN NAV
 		=============================================== -->
@@ -217,7 +233,7 @@
 					</div> -->
 					<div ng-repeat="manager in managers">
 						<div class="col-sm-6 col-md-3 col-md-push-3 text-center">
-							<span class="chart" data-percent="100"><img class="img-responsive img-circle img-center" ng-src="{$ manager.picture $}" alt=""></span>
+							<span class="chart" data-percent="100"><img class="img-responsive img-circle img-center" ng-src="{% static '' %}{$ manager.picture $}" alt=""></span>
 							<h2 class="text-center">{$ manager.fullName $} <small>{$ manager.position $}</small></h2>
 							<ul class="text-center socials">
 								<li><a href="{$ manager.facebook $}" target="_blank"><i class="icon-facebook-sign"></i></a></li>
@@ -270,16 +286,16 @@
 			</div><!--End portfolio header -->
 			
 			<div class="container masonry-wrapper scrollimation fade-in">
-			
 				<div id="projects-container">
 
 					<projects>
+
 					<!-- ==============================================
 					SINGLE PROJECT ITEM
 					=============================================== -->	
 					<a class="project-item {$ project.projectTags $}" project-url="{$ project.url $}" data-images="{$ projectImages(project.projectId) $}" ng-repeat="project in projects">
 						
-						<img class="img-responsive project-image" ng-src="{$ project.thumb $}"  alt=""><!--Project thumb -->
+						<img class="img-responsive project-image" ng-src="{% static '' %}{$ project.thumb $}"  alt=""><!--Project thumb -->
 						
 						<div class="hover-mask">
 							<h2 class="project-title">{$ project.title $}</h2><!--Project Title -->
@@ -290,7 +306,7 @@
 						
 						<div class="sr-only project-description">
 							<div ng-bind-html="project.desc"></div>
-							<img class="img-responsive img-center" ng-hide="project.desc == ''" ng-src="{$ project.logo $}"  alt="">
+							<img class="img-responsive img-center" ng-hide="project.logo == ''" ng-src="{% static '' %}{$ project.logo $}" alt="">
 
 							<div class="row" ng-hide="project.technologies == ''">
 								<div class="col-sm-3 col-md-2"><p><strong>Technologies:</strong></p></div><div class="col-sm-9 col-md-10" ng-bind-html="project.technologies"></div>
@@ -502,20 +518,6 @@
 		<!-- <script src="{% static 'main_site/js/contact.js' %}"></script> -->
 		<script src="{% static 'main_site/js/designr.js' %}"></script>
 
-		<!-- angularjs -->
-		<script src="{% static 'main_site/js/angular-1.2.14.min.js' %}"></script>
-		<script src="{% static 'main_site/js/angular-sanitize.min.js' %}"></script>
-		<script src="{% static 'main_site/js/angular/purplebit.js' %}"></script>
-		<script src="{% static 'main_site/js/angular/directives.js' %}"></script>
-		<script src="{% static 'main_site/js/angular/projectListCtrl.js' %}"></script>
-		<script src="{% static 'main_site/js/angular/projectDetailsSrv.js' %}"></script>
-		<script src="{% static 'main_site/js/angular/managementSrv.js' %}"></script>
-		<script src="{% static 'main_site/js/angular/managersCtrl.js' %}"></script>
-		<script src="{% static 'main_site/js/angular/testimonialSrv.js' %}"></script>
-		<script src="{% static 'main_site/js/angular/testimonialCtrl.js' %}"></script>
-		<script src="{% static 'main_site/js/angular/contactCtrl.js' %}"></script>
-		
-		
 		
 	</body>
 	
