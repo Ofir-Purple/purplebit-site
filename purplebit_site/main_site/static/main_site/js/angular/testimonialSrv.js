@@ -1,5 +1,5 @@
 
-purplebit.service("testimonialSrv", function($sanitize) {
+angular.module('purplebit').service("testimonialSrv", function($sanitize) {
 	
 
 	// object

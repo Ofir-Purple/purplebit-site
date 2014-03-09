@@ -1,5 +1,5 @@
 
-purplebit.controller('projectListCtrl', function($scope, $sanitize, projectDetailsSrv) {
+angular.module('purplebit').controller('projectListCtrl', function($scope, $sanitize, projectDetailsSrv) {
 	
 	$scope.projects = projectDetailsSrv.projectStorage;
 

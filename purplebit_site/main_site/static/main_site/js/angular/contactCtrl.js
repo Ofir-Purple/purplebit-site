@@ -1,5 +1,5 @@
 
-purplebit.controller('contactCtrl', function($scope, $http) {
+angular.module('purplebit').controller('contactCtrl', function($scope, $http, $timeout) {
 
 	$scope.contact = {};
 	
@@ -24,16 +24,17 @@ purplebit.controller('contactCtrl', function($scope, $http) {
 	// submit function
 	$scope.submit = function() {
 
-		$http.post('/submit', 'carousel')
+		$http.post('/path', 'data')
 
 		.success(function(data, status, headers, config) {
 			// on success
-			console.log('success!')
+			console.log('success!');
+
 		})
 
 		.error(function(data, status, headers, config) {
 			// on error
-			console.log('error happened');
+			console.log('error!');
 		});
 
 		// clear form after submit
@@ -42,7 +43,6 @@ purplebit.controller('contactCtrl', function($scope, $http) {
 		// set form pristine
 		$scope.tryPristine();
 	}
-
 
 
 })

@@ -1,6 +1,6 @@
 "use strict";
 
-purplebit.service('projectDetailsSrv', function($sanitize, configSrv) {
+angular.module('purplebit').service('projectDetailsSrv', function($sanitize, configSrv) {
 
 		// function append static url for each data image
 		var appendStaticUrl = function(dataImages) {

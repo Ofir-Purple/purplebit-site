@@ -1,7 +1,7 @@
 // directives
 
 // create url attribute to store the project's url
-purplebit.directive('project-url', function() {
+angular.module('purplebit').directive('project-url', function() {
 	return {
 		restrict: "A",
 		scope: {
@@ -10,9 +10,8 @@ purplebit.directive('project-url', function() {
 	}
 })
 
-
 // project modal (pop-up window)
-purplebit.directive('projects', function() {
+angular.module('purplebit').directive('projects', function() {
 	return {
 		restrict: "E",
 		scope: {
@@ -81,7 +80,7 @@ purplebit.directive('projects', function() {
 
 
 // testimonial slider
-purplebit.directive('slides', function() {
+angular.module('purplebit').directive('slides', function() {
 	return {
 		restrict: "A",
 		scope: {

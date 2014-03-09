@@ -1,6 +1,6 @@
 "use strict";
 
-purplebit.service('managementSrv', function(configSrv) {
+angular.module('purplebit').service('managementSrv', function(configSrv) {
 
 	this.Manager = function(picture, fullName, position, facebook, linkedin, about) {
 		this.picture = configSrv.staticUrl + picture;
