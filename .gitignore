@@ -5,7 +5,3 @@
 .project
 .idea/*
 venv
-
-purplebit_site/main_site/static/main_site/js/angular-1.2.14.min.js
-purplebit_site/main_site/static/main_site/js/angular-sanitize.min.js
-purplebit_site/main_site/static/main_site/js/angular.min.js.map
