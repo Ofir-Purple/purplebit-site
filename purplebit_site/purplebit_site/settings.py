@@ -211,6 +211,21 @@ AWS_ACCESS_KEY_ID = os.environ['PURPLEBIT_SITE_ENV_AWS_ACCESS_KEY_ID']
 AWS_SECRET_ACCESS_KEY = os.environ['PURPLEBIT_SITE_ENV_AWS_SECRET_ACCESS_KEY']
 AWS_STORAGE_BUCKET_NAME = os.environ['PURPLEBIT_SITE_ENV_AWS_STORAGE_BUCKET_NAME']
 
+# Email
+# #####
+
+try:
+    EMAIL_HOST = 'smtp.sendgrid.net'
+    EMAIL_HOST_USER = 'app22642519@heroku.com' #os.environ['SENDGRID_USERNAME']
+    EMAIL_HOST_PASSWORD = 'gp0yubcz' #os.environ['SENDGRID_PASSWORD']
+    EMAIL_PORT = 587
+    EMAIL_USE_TLS = True
+except:
+    pass
+
+ADMIN_EMAIL_ADDRESS = 'contact@purplebit.com'
+FROM_EMAIL_ADDRESS = 'website@purplebit.com'
+
 # Blog
 # ####
 
