@@ -386,8 +386,8 @@ header.jumbotron{
     display:inline-block;
     margin:0;
     padding:10px 30px 10px 5px;
-    font-size:110px;
-    line-height:110px;
+    font-size:100px;
+    line-height:115px;
     font-weight:900;
     text-transform:uppercase;
 }
@@ -1082,7 +1082,7 @@ header.jumbotron{
 ------------------------*/
 
 #contact {
-    background:url(../img/contact-bg.jpg) no-repeat center center fixed;
+    background:url(../img/contact-bg.jpg) no-repeat center right fixed;
     color:#fff;
 	padding:80px 0; 
 	-webkit-background-size: cover;
