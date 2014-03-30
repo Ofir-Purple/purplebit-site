@@ -1393,24 +1393,6 @@ header.jumbotron{
 	transform:translateX(0px);
 }
 
-.scrollimation.fade-left{
-	opacity:0;
-	-webkit-transform: translateX(30px);
-	-moz-transform: translateX(30px);
-	-ms-transform: translateX(30px);
-	transform:translateX(30px);
-	-webkit-transition: -webkit-transform .6s ease-in,opacity .8s ease-in;
-	transition: transform .6s ease-in,opacity .8s ease-in;
-}
-
-.scrollimation.fade-left.in{
-	opacity:1;
-	-webkit-transform: translateX(0px);
-	-moz-transform: translateX(0px);
-	-ms-transform: translateX(0px);
-	transform:translateX(0px);
-}
-
 .scrollimation.fade-up{
 	opacity:0;
 	-webkit-transform: translateY(30px);
