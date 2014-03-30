@@ -326,6 +326,11 @@ body {
 .flexslider {
     z-index: 1;
 }
+
+/* onhover flickering fix */
+.scrollimation, .scrollimation div {
+    -webkit-backface-visibility:hidden;
+}
 /*----------------------
 -----Header Styles------
 ------------------------*/
