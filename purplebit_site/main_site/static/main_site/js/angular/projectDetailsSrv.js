@@ -86,7 +86,7 @@ angular.module('purplebit').service('projectDetailsSrv', function($sanitize, STA
 			'',
 			'http://almalinks.org/',
 			'main_site/img/projects/almalinks-350-230.jpg',
-			'',
+			'main_site/img/projects/almalinks-logo-small.jpg',
 			'front-end backend',
 			['main_site/img/projects/almalinks-540-310.jpg']
 			)
@@ -160,6 +160,72 @@ angular.module('purplebit').service('projectDetailsSrv', function($sanitize, STA
 			['main_site/img/projects/wordsearchgamemaker-540-310.jpg']
 			)
 		
+		var autoDesk = new this.Project(
+			'Autodesk',
+			'Autodesk >',
+			'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien risus, blandit at fringilla ac, varius sed dolor. Donec augue lacus, vulputate sed consectetur facilisis, interdum pharetra ligula. Nulla suscipit erat nibh, ut porttitor nisl dapibus eu.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien risus, blandit at fringilla ac, varius sed dolor. Donec augue lacus, vulputate sed consectetur facilisis, interdum pharetra ligula. Nulla suscipit erat nibh, ut porttitor nisl dapibus eu.</p>',
+			'<p>Technologies</p>',
+			'<p>Testimonials</p>',
+			'http://www.autodesk.com/‎',
+			'main_site/img/projects/autodesk-thumb-350-230.png',
+			'main_site/img/projects/autodesk-logo-333-200.png',
+			'project-tags',
+			['main_site/img/projects/project-slide.jpg']
+			)
+
+		var sap = new this.Project(
+			'SAP',
+			'SAP >',
+			'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien risus, blandit at fringilla ac, varius sed dolor. Donec augue lacus, vulputate sed consectetur facilisis, interdum pharetra ligula. Nulla suscipit erat nibh, ut porttitor nisl dapibus eu.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien risus, blandit at fringilla ac, varius sed dolor. Donec augue lacus, vulputate sed consectetur facilisis, interdum pharetra ligula. Nulla suscipit erat nibh, ut porttitor nisl dapibus eu.</p>',
+			'<p>Technologies</p>',
+			'<p>Testimonials</p>',
+			'http://www.sap.com/',
+			'main_site/img/projects/sap-thumb-350-230.jpg',
+			'main_site/img/projects/sap-logo-200-200.jpg',
+			'project-tags',
+			['main_site/img/projects/project-slide.jpg']
+			)
+
+		var allScripts = new this.Project(
+			'Allscripts',
+			'Allscripts >',
+			'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien risus, blandit at fringilla ac, varius sed dolor. Donec augue lacus, vulputate sed consectetur facilisis, interdum pharetra ligula. Nulla suscipit erat nibh, ut porttitor nisl dapibus eu.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien risus, blandit at fringilla ac, varius sed dolor. Donec augue lacus, vulputate sed consectetur facilisis, interdum pharetra ligula. Nulla suscipit erat nibh, ut porttitor nisl dapibus eu.</p>',
+			'<p>Technologies</p>',
+			'<p>Testimonials</p>',
+			'https://www.allscripts.com/',
+			'main_site/img/projects/allscripts-thumb-350-230.jpg',
+			'main_site/img/projects/allscripts-logo-300-65.jpg',
+			'project-tags',
+			['main_site/img/projects/project-slide.jpg']
+			)
+
+		var combitel = new this.Project(
+			'Combitel',
+			'Combitel >',
+			'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien risus, blandit at fringilla ac, varius sed dolor. Donec augue lacus, vulputate sed consectetur facilisis, interdum pharetra ligula. Nulla suscipit erat nibh, ut porttitor nisl dapibus eu.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien risus, blandit at fringilla ac, varius sed dolor. Donec augue lacus, vulputate sed consectetur facilisis, interdum pharetra ligula. Nulla suscipit erat nibh, ut porttitor nisl dapibus eu.</p>',
+			'<p>Technologies</p>',
+			'<p>Testimonials</p>',
+			'https://www.combitel.com.au/',
+			'main_site/img/projects/combitel-thumb-350-230.png',
+			'main_site/img/projects/combitel-logo-193-45.png',
+			'project-tags',
+			['main_site/img/projects/project-slide.jpg']
+			)
+
+		var social = new this.Project(
+			'$ocial',
+			'Social >',
+			'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien risus, blandit at fringilla ac, varius sed dolor. Donec augue lacus, vulputate sed consectetur facilisis, interdum pharetra ligula. Nulla suscipit erat nibh, ut porttitor nisl dapibus eu.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien risus, blandit at fringilla ac, varius sed dolor. Donec augue lacus, vulputate sed consectetur facilisis, interdum pharetra ligula. Nulla suscipit erat nibh, ut porttitor nisl dapibus eu.</p>',
+			'<p>Technologies</p>',
+			'<p>Testimonials</p>',
+			'http://www.dollarsocial.com/',
+			'main_site/img/projects/social-thumb-350-230.png',
+			'main_site/img/projects/social-logo-165-49.png',
+			'project-tags',
+			['main_site/img/projects/project-slide.jpg']
+		)
+		/* Template */
+		/*
 		var project9 = new this.Project(
 			'Project 9',
 			'amazon.com >',
@@ -174,9 +240,10 @@ angular.module('purplebit').service('projectDetailsSrv', function($sanitize, STA
 			'main_site/img/projects/project-slide.jpg',
 			'main_site/img/projects/project-slide.jpg']
 			)
+		*/
 		
 
-		// populate projects lists
+		// populate projects list
 		this.addProject(fitblok);
 		this.addProject(ironSource);
 		this.addProject(almaLinks);
@@ -185,5 +252,10 @@ angular.module('purplebit').service('projectDetailsSrv', function($sanitize, STA
 		this.addProject(dataMining);
 		this.addProject(restApiPres);
 		this.addProject(wordGame);
-		this.addProject(project9);
+		this.addProject(autoDesk);
+		this.addProject(sap);
+		this.addProject(allScripts);
+		this.addProject(combitel);
+		this.addProject(social);
+		/* this.addProject(project9); */
 })
