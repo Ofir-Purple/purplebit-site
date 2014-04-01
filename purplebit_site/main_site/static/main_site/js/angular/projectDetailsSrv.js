@@ -140,7 +140,7 @@ angular.module('purplebit').service('projectDetailsSrv', function($sanitize, STA
 			'',
 			'https://github.com/purplebit/Rest-API-AngularJS-Presentation',
 			'main_site/img/projects/angularjsil-350-230.jpg',
-			'main_site/img/projects/company-logo.png',
+			'',
 			'training front-end architecture',
 			['main_site/img/projects/angularjsil-540-310.jpg',
 			 'main_site/img/projects/angularjsil-2-540-310.jpg',

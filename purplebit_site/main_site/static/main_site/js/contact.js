@@ -2,13 +2,16 @@ $(document).ready(function() {
 	$('#contact-form').submit(function() {
 		var buttonWidth=$('#contact-form button').width();
 		
-		var buttonCopy = $('#contact-form button').html(),
-			errorMessage = $('#contact-form button').data('error-message'),
-			sendingMessage = $('#contact-form button').data('sending-message'),
-			okMessage = $('#contact-form button').data('ok-message'),
+		var button = $('#contact-form button')
+			buttonCopy = button.data('regular-message') || button.html(),
+			errorMessage = button.data('error-message'),
+			sendingMessage = button.data('sending-message'),
+			okMessage = button.data('ok-message'),
+			serverError = button.data('server-error'),
 			hasError = false;
 		
-		$('#contact-form button').width(buttonWidth);
+		button.width(buttonWidth);
+		button.data('regular-message', buttonCopy);
 		$('#contact-form .error-message').remove();
 		
 		$('.requiredField').each(function() {
@@ -29,24 +32,28 @@ $(document).ready(function() {
 		});
 		
 		if(hasError) {
-			$('#contact-form button').html('<i class="icon-remove"></i>'+errorMessage);
+			button.html('<i class="icon-remove"></i>'+errorMessage);
 			setTimeout(function(){
-				$('#contact-form button').html(buttonCopy);
-				$('#contact-form button').width('auto');
+				button.html(buttonCopy);
+				button.width('auto');
 			},2000);
 		}
 		else {
-			$('#contact-form button').html('<i class="icon-refresh icon-spin"></i>'+sendingMessage);
+			button.html('<i class="icon-refresh icon-spin"></i>'+sendingMessage);
 			
 			var formInput = $(this).serialize();
-			$.post($(this).attr('action'),formInput, function(data){
-				$('#contact-form button').html('<i class="icon-ok"></i>'+okMessage);
-				setTimeout(function(){
-					$('#contact-form button').html(buttonCopy);
-					$('#contact-form button').width('auto');
-				},2000);
-				
-			});
+			$.post($(this).attr('action'),formInput)
+				.done(function(data){
+					button.html('<i class="icon-ok"></i>'+okMessage);
+					setTimeout(function(){
+						button.html(buttonCopy);
+						button.width('auto');
+					},5000);
+					
+				})
+				.fail(function(data) {
+					button.html('<i class="icon-remove"></i>'+serverError);
+				});
 		}
 		
 		return false;	
