@@ -56,7 +56,7 @@ angular.module('purplebit').service('projectDetailsSrv', function($sanitize, STA
 			'<p>Django, TastyPie, Wowza, FFMPEG, AngularJS, Heroku, Amazon S3, Amazon EC2, Redis, Stripe, Facebook SDK, PhantomJS, Celery, LESS.</p>',
 			'<p>"I wanted to use the opportunity to say <strong>thank you!</strong> You guys are <strong>absolute rock stars</strong>. I am very fortunate to have found you and know that we wouldn&#8217;t have gotten to a launch without you. You are a <strong>pleasure to work with</strong>. Smart, responsible, responsive, thorough and creative. I am sure that there is a lot I don&#8217;t see in what you encounter on daily basis engineering the guts of the product and overcoming issues and bugs but <strong>I am sure you are doing impressive work because I see the final product</strong>." - Fitblok’s CEO</p>',
 			'https://www.fitblok.com',
-			'main_site/img/projects/fitblok-700-460.jpg',
+			'main_site/img/projects/fitblok-thumb-350-230.png',
 			'main_site/img/projects/fitblok-logo.png',
 			'backend front-end architecture',
 			['main_site/img/projects/fitblok-540-310.jpg', 
@@ -72,10 +72,10 @@ angular.module('purplebit').service('projectDetailsSrv', function($sanitize, STA
 			'<p>Django, Python, Aamazon EC2, Celery.</p>',
 			'',
 			'http://ironsrc.com',
-			'main_site/img/projects/ironsource-logo-350-230.jpg',
+			'main_site/img/projects/ironsource-thumb-350-230.jpg',
 			'main_site/img/projects/ironsource-logo-350-230.jpg',
 			'backend front-end',
-			['main_site/img/projects/ironsource-logo-540-310.jpg']
+			['main_site/img/projects/ironsource-540-310.png']
 			)
 		
 		var almaLinks = new this.Project(
@@ -85,8 +85,8 @@ angular.module('purplebit').service('projectDetailsSrv', function($sanitize, STA
 			'<p>Django, Heroku, Amazon S3, Bootstrap, jQuery, LESS, LinkedIn API.</p>',
 			'',
 			'http://almalinks.org/',
-			'main_site/img/projects/almalinks-350-230.jpg',
-			'',
+			'main_site/img/projects/almalinks-thumb-350-230.jpg',
+			'main_site/img/projects/almalinks-logo-small.jpg',
 			'front-end backend',
 			['main_site/img/projects/almalinks-540-310.jpg']
 			)
@@ -98,7 +98,7 @@ angular.module('purplebit').service('projectDetailsSrv', function($sanitize, STA
 			'<p>AWS, Python/Django, HTML5, JavaScript, CSS3/LESS, Munin, Monit, Boto, Fabric, Linux Server Administration, shell scripting.</p>',
 			'<p>"Purple Bit were <strong>available and flexible</strong> with timing issues, and the whole logistic process was good. The team was <strong>very accommodating to our needs</strong> regarding timing, office hours, etc.</p><p>The team came with an <strong>excellent approach and can-do attitude</strong>. It was a <strong>joy</strong> to work with them, as this is really not trivial for people who are paid hourly. This is one of the important reasons <strong>we&#8217;d want to work with Purple Bit again</strong>." – Imri Goldberg, CTO at Desti.com</p>',
 			'http://www.desti.com',
-			'main_site/img/projects/desti-logo-350-230.png',
+			'main_site/img/projects/desti-thumb-350-230.png',
 			'main_site/img/projects/desti-logo-350-230.png',
 			'backend front-end',
 			['main_site/img/projects/desti-website-540-310.jpg',
@@ -113,7 +113,7 @@ angular.module('purplebit').service('projectDetailsSrv', function($sanitize, STA
 			'<p>JavaScript, jQuery, Python, Django, Amazon S3, Facebook API, MySQL.</p>',
 			'',
 			'http://www.chattybar.com/',
-			'main_site/img/projects/chatty-230-350.jpg',
+			'main_site/img/projects/chatty-thumb-350-230.png',
 			'main_site/img/projects/chatty-logo.png',
 			'backend front-end architecture',
 			['main_site/img/projects/chatty-540-310.jpg']
@@ -160,6 +160,125 @@ angular.module('purplebit').service('projectDetailsSrv', function($sanitize, STA
 			['main_site/img/projects/wordsearchgamemaker-540-310.jpg']
 			)
 		
+		var autoDesk = new this.Project(
+			'Autodesk',
+			'Autodesk >',
+			'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien risus, blandit at fringilla ac, varius sed dolor. Donec augue lacus, vulputate sed consectetur facilisis, interdum pharetra ligula. Nulla suscipit erat nibh, ut porttitor nisl dapibus eu.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien risus, blandit at fringilla ac, varius sed dolor. Donec augue lacus, vulputate sed consectetur facilisis, interdum pharetra ligula. Nulla suscipit erat nibh, ut porttitor nisl dapibus eu.</p>',
+			'<p>Technologies</p>',
+			'<p>Testimonials</p>',
+			'http://www.autodesk.com/‎',
+			'main_site/img/projects/autodesk-thumb-350-230.png',
+			'main_site/img/projects/autodesk-logo-333-200.png',
+			'project-tags',
+			['main_site/img/projects/autodesk-540-310.png']
+			)
+
+		var sap = new this.Project(
+			'SAP',
+			'SAP >',
+			'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien risus, blandit at fringilla ac, varius sed dolor. Donec augue lacus, vulputate sed consectetur facilisis, interdum pharetra ligula. Nulla suscipit erat nibh, ut porttitor nisl dapibus eu.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien risus, blandit at fringilla ac, varius sed dolor. Donec augue lacus, vulputate sed consectetur facilisis, interdum pharetra ligula. Nulla suscipit erat nibh, ut porttitor nisl dapibus eu.</p>',
+			'<p>Technologies</p>',
+			'<p>Testimonials</p>',
+			'http://www.sap.com/',
+			'main_site/img/projects/sap-thumb-350-230.jpg',
+			'main_site/img/projects/sap-logo-200-200.jpg',
+			'project-tags',
+			['main_site/img/projects/sap-540-310.png']
+			)
+
+		var allScripts = new this.Project(
+			'Allscripts',
+			'Allscripts >',
+			'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien risus, blandit at fringilla ac, varius sed dolor. Donec augue lacus, vulputate sed consectetur facilisis, interdum pharetra ligula. Nulla suscipit erat nibh, ut porttitor nisl dapibus eu.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien risus, blandit at fringilla ac, varius sed dolor. Donec augue lacus, vulputate sed consectetur facilisis, interdum pharetra ligula. Nulla suscipit erat nibh, ut porttitor nisl dapibus eu.</p>',
+			'<p>Technologies</p>',
+			'<p>Testimonials</p>',
+			'https://www.allscripts.com/',
+			'main_site/img/projects/allscripts-thumb-350-230.jpg',
+			'main_site/img/projects/allscripts-logo-300-65.jpg',
+			'project-tags',
+			['main_site/img/projects/allscripts-540-310.png']
+			)
+
+		var combitel = new this.Project(
+			'Combitel',
+			'Combitel >',
+			'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien risus, blandit at fringilla ac, varius sed dolor. Donec augue lacus, vulputate sed consectetur facilisis, interdum pharetra ligula. Nulla suscipit erat nibh, ut porttitor nisl dapibus eu.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien risus, blandit at fringilla ac, varius sed dolor. Donec augue lacus, vulputate sed consectetur facilisis, interdum pharetra ligula. Nulla suscipit erat nibh, ut porttitor nisl dapibus eu.</p>',
+			'<p>Technologies</p>',
+			'<p>Testimonials</p>',
+			'https://www.combitel.com.au/',
+			'main_site/img/projects/combitel-thumb-350-230.png',
+			'main_site/img/projects/combitel-logo-193-45.png',
+			'project-tags',
+			['main_site/img/projects/combitel-540-310.png']
+			)
+
+		var social = new this.Project(
+			'$ocial',
+			'Social >',
+			'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien risus, blandit at fringilla ac, varius sed dolor. Donec augue lacus, vulputate sed consectetur facilisis, interdum pharetra ligula. Nulla suscipit erat nibh, ut porttitor nisl dapibus eu.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien risus, blandit at fringilla ac, varius sed dolor. Donec augue lacus, vulputate sed consectetur facilisis, interdum pharetra ligula. Nulla suscipit erat nibh, ut porttitor nisl dapibus eu.</p>',
+			'<p>Technologies</p>',
+			'<p>Testimonials</p>',
+			'http://www.dollarsocial.com/',
+			'main_site/img/projects/social-thumb-350-230.png',
+			'main_site/img/projects/social-logo-165-49.png',
+			'project-tags',
+			['main_site/img/projects/social-540-310.png']
+		)
+
+		var toysAlive = new this.Project(
+			'Toys Alive',
+			'Toys Alive >',
+			'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien risus, blandit at fringilla ac, varius sed dolor. Donec augue lacus, vulputate sed consectetur facilisis, interdum pharetra ligula. Nulla suscipit erat nibh, ut porttitor nisl dapibus eu.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien risus, blandit at fringilla ac, varius sed dolor. Donec augue lacus, vulputate sed consectetur facilisis, interdum pharetra ligula. Nulla suscipit erat nibh, ut porttitor nisl dapibus eu.</p>',
+			'<p>Technologies</p>',
+			'<p>Testimonials</p>',
+			'http://www.toysalive.com/',
+			'main_site/img/projects/toysalive-thumb-350-230.png',
+			'main_site/img/projects/toysalive-logo-300-130.png',
+			'project-tags',
+			['main_site/img/projects/toysalive-540-310.png']
+		)
+
+		var waveDeck = new this.Project(
+			'WaveDeck',
+			'WaveDeck >',
+			'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien risus, blandit at fringilla ac, varius sed dolor. Donec augue lacus, vulputate sed consectetur facilisis, interdum pharetra ligula. Nulla suscipit erat nibh, ut porttitor nisl dapibus eu.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien risus, blandit at fringilla ac, varius sed dolor. Donec augue lacus, vulputate sed consectetur facilisis, interdum pharetra ligula. Nulla suscipit erat nibh, ut porttitor nisl dapibus eu.</p>',
+			'<p>Technologies</p>',
+			'<p>Testimonials</p>',
+			'http://www.wavedeck.com/',
+			'main_site/img/projects/wavedeck-thumb-350-230.png',
+			'main_site/img/projects/wavedeck-thumb-350-230.png',
+			'project-tags',
+			['main_site/img/projects/wavedeck-540-310.png']
+		)
+
+		var wireX = new this.Project(
+			'WireX',
+			'WireX >',
+			'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien risus, blandit at fringilla ac, varius sed dolor. Donec augue lacus, vulputate sed consectetur facilisis, interdum pharetra ligula. Nulla suscipit erat nibh, ut porttitor nisl dapibus eu.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien risus, blandit at fringilla ac, varius sed dolor. Donec augue lacus, vulputate sed consectetur facilisis, interdum pharetra ligula. Nulla suscipit erat nibh, ut porttitor nisl dapibus eu.</p>',
+			'<p>Technologies</p>',
+			'<p>Testimonials</p>',
+			'http://wirex-systems.com/',
+			'main_site/img/projects/wirex-thumb-350-230.png',
+			'main_site/img/projects/wirex-thumb-350-230.png',
+			'project-tags',
+			['main_site/img/projects/wirex-540-310.png']
+		)
+
+		var atLargeInc = new this.Project(
+			'AtLargeinc.',
+			'AtLargeinc. >',
+			'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien risus, blandit at fringilla ac, varius sed dolor. Donec augue lacus, vulputate sed consectetur facilisis, interdum pharetra ligula. Nulla suscipit erat nibh, ut porttitor nisl dapibus eu.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien risus, blandit at fringilla ac, varius sed dolor. Donec augue lacus, vulputate sed consectetur facilisis, interdum pharetra ligula. Nulla suscipit erat nibh, ut porttitor nisl dapibus eu.</p>',
+			'<p>Technologies</p>',
+			'<p>Testimonials</p>',
+			'http://wirex-systems.com/',
+			'main_site/img/projects/atlarge-thumb-350-230.jpg',
+			'main_site/img/projects/atlarge-logo.jpeg',
+			'project-tags',
+			['main_site/img/projects/atlargeinc-540-310.png']
+		)
+
+		/* Template */
+		/*
 		var project9 = new this.Project(
 			'Project 9',
 			'amazon.com >',
@@ -174,9 +293,9 @@ angular.module('purplebit').service('projectDetailsSrv', function($sanitize, STA
 			'main_site/img/projects/project-slide.jpg',
 			'main_site/img/projects/project-slide.jpg']
 			)
-		
+		*/
 
-		// populate projects lists
+		// populate projects list
 		this.addProject(fitblok);
 		this.addProject(ironSource);
 		this.addProject(almaLinks);
@@ -185,5 +304,14 @@ angular.module('purplebit').service('projectDetailsSrv', function($sanitize, STA
 		this.addProject(dataMining);
 		this.addProject(restApiPres);
 		this.addProject(wordGame);
-		this.addProject(project9);
+		this.addProject(autoDesk);
+		this.addProject(sap);
+		this.addProject(allScripts);
+		this.addProject(combitel);
+		this.addProject(social);
+		this.addProject(toysAlive);
+		this.addProject(waveDeck);
+		this.addProject(wireX);
+		this.addProject(atLargeInc);
+		/*this.addProject(project);*/
 })
