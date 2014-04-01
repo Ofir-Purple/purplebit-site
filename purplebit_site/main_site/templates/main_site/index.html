@@ -428,7 +428,7 @@
 					
 					<!--=== Contact Form ===-->
 
-					<form name="contactForm" id="contact-form" class="col-sm-7 scrollimation fade-left" ng-submit="submit()" novalidate>
+					<form name="contactForm" id="contact-form" class="col-sm-7 scrollimation fade-left" ng-submit="submit('{% url 'backend:contact' %}')" novalidate>
 
 						{% csrf_token %}
 						
@@ -460,8 +460,11 @@
 							</div>
 						</div><!-- End textarea -->
 						
-						<p><button name="submit" type="submit" class="btn btn-theme btn-lg" ng-disabled="contactForm.$invalid">
-							<i class="icon-location-arrow"></i>Send Message</button></p>
+						<p>
+							<button name="submit" type="submit" class="btn btn-theme btn-lg" ng-disabled="contactForm.$invalid">
+								<i ng-class="contactBtn.icon"></i> {$ contactBtn.message $}
+							</button>
+						</p>
 						
 					</form><!-- End contact-form -->
 				  

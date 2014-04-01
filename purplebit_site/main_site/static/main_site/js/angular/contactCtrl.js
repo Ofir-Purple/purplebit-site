@@ -2,13 +2,18 @@
 angular.module('purplebit').controller('contactCtrl', function($scope, $http, $timeout) {
 
 	$scope.contact = {};
+
+	$scope.contactBtn = {
+		message: 'Send Message',
+		icon: 'icon-location-arrow'
+	};
 	
 	// set default form values
 	var setDefaults = function() {
 		$scope.contact.name = undefined;
 		$scope.contact.email = undefined;
 		$scope.contact.message = undefined;
-	}
+	};
 
 	setDefaults();
 
@@ -19,30 +24,36 @@ angular.module('purplebit').controller('contactCtrl', function($scope, $http, $t
 			($scope.contact.message == undefined) ) {
 			$scope.contactForm.$setPristine();
 		}
-	}
+	};
 
 	// submit function
-	$scope.submit = function() {
+	$scope.submit = function(contactUrl) {
 
-		$http.post('/path', 'data')
+		$http.post(contactUrl, $scope.contact)
 
 		.success(function(data, status, headers, config) {
-			// on success
-			console.log('success!');
 
+			$scope.contactBtn.message = 'Message Sent';
+			$scope.contactBtn.icon = 'icon-ok';
+
+			$timeout(function() {
+				$scope.contactBtn.message = 'Send Message';
+				$scope.contactBtn.icon = 'icon-location-arrow';
+			}, 7000);
+
+			// clear form after submit
+			setDefaults();
+
+			// set form pristine
+			$scope.tryPristine();
 		})
-
 		.error(function(data, status, headers, config) {
 			// on error
-			console.log('error!');
+			$scope.contactBtn.message = 'Error';
+			$scope.contactBtn.icon = 'icon-remove';
 		});
 
-		// clear form after submit
-		setDefaults();
-
-		// set form pristine
-		$scope.tryPristine();
-	}
-
-
-})
+		$scope.contactBtn.message = 'Sending...';
+		$scope.contactBtn.icon = 'icon-refresh icon-spin';
+	};
+});
