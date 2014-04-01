@@ -1613,5 +1613,11 @@ p {
     line-height:32px;
 	padding-top:14px;
 }
-
 }
+
+@media (max-width: 320px) {
+    #projects-container .project-item {
+        width: 320px;
+        }
+}
+
