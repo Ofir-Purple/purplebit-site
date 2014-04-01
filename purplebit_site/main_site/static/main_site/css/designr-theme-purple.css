@@ -1093,7 +1093,7 @@ header.jumbotron{
 ------------------------*/
 
 #contact {
-    background:url(../img/contact-bg.jpg) no-repeat center right fixed;
+    background:url(../img/contact-bg.jpg) no-repeat right top fixed;
     color:#fff;
 	padding:80px 0; 
 	-webkit-background-size: cover;
