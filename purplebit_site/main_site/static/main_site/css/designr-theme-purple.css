@@ -33,6 +33,8 @@
     border-radius:0;
 }
 
+
+
 /*---------------------------
 ---Main Typography Styles----
 -----------------------------*/
@@ -320,6 +322,15 @@ body {
 	margin-left:-15px;
 }
 
+/* text flickering fix */
+.flexslider {
+    z-index: 1;
+}
+
+/* onhover flickering fix */
+.scrollimation, .scrollimation div {
+    -webkit-backface-visibility:hidden;
+}
 /*----------------------
 -----Header Styles------
 ------------------------*/
@@ -1082,7 +1093,7 @@ header.jumbotron{
 ------------------------*/
 
 #contact {
-    background:url(../img/contact-bg.jpg) no-repeat center right fixed;
+    background:url(../img/contact-bg.jpg) no-repeat right top fixed;
     color:#fff;
 	padding:80px 0; 
 	-webkit-background-size: cover;
@@ -1393,24 +1404,6 @@ header.jumbotron{
 	transform:translateX(0px);
 }
 
-.scrollimation.fade-left{
-	opacity:0;
-	-webkit-transform: translateX(30px);
-	-moz-transform: translateX(30px);
-	-ms-transform: translateX(30px);
-	transform:translateX(30px);
-	-webkit-transition: -webkit-transform .6s ease-in,opacity .8s ease-in;
-	transition: transform .6s ease-in,opacity .8s ease-in;
-}
-
-.scrollimation.fade-left.in{
-	opacity:1;
-	-webkit-transform: translateX(0px);
-	-moz-transform: translateX(0px);
-	-ms-transform: translateX(0px);
-	transform:translateX(0px);
-}
-
 .scrollimation.fade-up{
 	opacity:0;
 	-webkit-transform: translateY(30px);
@@ -1620,5 +1613,11 @@ p {
     line-height:32px;
 	padding-top:14px;
 }
-
 }
+
+@media (max-width: 320px) {
+    #projects-container .project-item {
+        width: 320px;
+        }
+}
+

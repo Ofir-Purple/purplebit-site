@@ -1,4 +1,4 @@
-# from .models import 
+import json
 
 from django.views.decorators.http import require_POST
 from django.http.response import HttpResponse
@@ -15,11 +15,11 @@ def contact(request):
     in the DB.
     """
 
-    params = request.POST
+    params = json.loads(request.body)
 
-    name = params.get('contactName', '')
+    name = params.get('name', '')
     email = params.get('email', '')
-    message = params.get('comments', '')
+    message = params.get('message', '')
 
     contact = ContactFormSubmission(
         name=name,

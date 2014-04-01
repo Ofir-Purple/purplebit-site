@@ -44,11 +44,27 @@
 		
 		<script type="text/javascript" src="{% static 'main_site/js/libs/modernizr.min.js' %}"></script>
 		
+
+		<!-- angularjs -->
+		<script src="{% static 'main_site/js/angular-1.2.14.min.js' %}"></script>
+		<script src="{% static 'main_site/js/angular-sanitize.min.js' %}"></script>
+		<script src="{% static 'main_site/js/angular/purplebit.js' %}"></script>
+		<script src="{% static 'main_site/js/angular/directives.js' %}"></script>
+		<script src="{% static 'main_site/js/angular/projectListCtrl.js' %}"></script>
+		<script src="{% static 'main_site/js/angular/projectDetailsSrv.js' %}"></script>
+		<script src="{% static 'main_site/js/angular/managementSrv.js' %}"></script>
+		<script src="{% static 'main_site/js/angular/managersCtrl.js' %}"></script>
+		<script src="{% static 'main_site/js/angular/testimonialSrv.js' %}"></script>
+		<script src="{% static 'main_site/js/angular/testimonialCtrl.js' %}"></script>
+		<script src="{% static 'main_site/js/angular/contactCtrl.js' %}"></script>
 		
+		<script type="text/javascript">
+			angular.module('purplebit').constant('STATIC_URL', "{% static '' %}");
+		</script>
+
 	</head>
   
-	<body data-spy="scroll" data-target="#main-nav" data-offset="200">
-	
+	<body data-spy="scroll" data-target="#main-nav" data-offset="200" ng-app="purplebit">
 		<!-- ==============================================
 		MAIN NAV
 		=============================================== -->
@@ -132,7 +148,7 @@
 			
 				<h1 class="section-title scrollimation scale-in">Our <span>Specialties</span><i class="icon-wrench"></i></h1>
 				
-				<div class="row services scrollimation fade-left">
+				<div class="row services scrollimation fade-right">
 					<div class="col-md-3 text-center">
 						<a href="#architecture" class="icon"><i class="icon-sitemap"></i></a>
 						<h2>Architecture</h2>
@@ -188,7 +204,7 @@
 					<div class="col-sm-4 col-sm-offset-1 scrollimation fade-right">
 						<img class="img-responsive img-circle img-center" src="{% static 'main_site/img/about.jpg' %}" alt="">
 					</div>
-					<div class="col-sm-6 col-sm-offset-1 scrollimation fade-left">
+					<div class="col-sm-6 col-sm-offset-1 scrollimation fade-right">
 						<h1>Hello, We're Purple Bit...</h1>
 						<p>We create beautiful web applications using <a href="https://www.djangoproject.com/" target="_blank">Django</a> and <a href="http://angularjs.org/" target="_blank">AngularJS</a>. Purple Bit was founded by veterans of <strong>elite Israeli programming units</strong> that assembled a team of the top of the crop developers. All of our developers have vast programming experience. We do <strong>Agile</strong>, we do <strong>lean</strong>, we maintain a close relationship with our clients in order to give you the <strong>best quality</strong> products at the <strong>shortest time</strong>! Our offices are located at the heart of <a href="#contact" class="scrollto">Tel Aviv, Israel</a>, and <a href="#portfolio" class="scrollto">our clients</a> are located all over the world, including the US, UK and Australia.</p>
 						<!-- <p></p> -->
@@ -203,11 +219,11 @@
 		<!-- ==============================================
 		SKILLS
 		=============================================== -->			
-		<section id="skills">
+		<section id="skills" ng-controller="managersCtrl">
 		
 			<div class="container">
 
-				<div class="row"><h1 class="text-center scrollimation fade-left">Management</h1></div>
+				<div class="row"><h1 class="text-center scrollimation fade-right">Management</h1></div>
 			
 				<div class="row skills">
 
@@ -215,24 +231,16 @@
 						<span class="chart" data-percent="100"><img class="img-responsive img-circle img-center" src="{% static 'main_site/img/about.jpg' %}" alt=""></span>
 						<h2 class="text-center">John Doe</h2>
 					</div> -->
-					<div class="col-sm-6 col-md-3 col-md-offset-3 text-center">
-						<span class="chart" data-percent="100"><img class="img-responsive img-circle img-center" src="{% static 'main_site/img/about.jpg' %}" alt=""></span>
-						<h2 class="text-center">Edan Maor <small>CEO</small></h2>
-						<ul class="text-center socials">
-							<li><a href="https://www.facebook.com/edan.maor" target="_blank"><i class="icon-facebook-sign"></i></a></li>
-							<li><a href="http://www.linkedin.com/in/edanmaor" target="_blank"><i class="icon-linkedin-sign"></i></a></li>
-						</ul>
-						<p class="text-justified">Edan has been programming since the age of 12. He has been working with Python for the last 9 years. After completing "Mamram" programming course in the IDF, he served as a programmer in an elite cyber unit and was promoted to a team leader position. Later on, he turned to completing his BA degree in Computer Science, and opening a small start-up company. Today he is at the helm of Purple Bit.</p>
-						<p></p>
-					</div>
-					<div class="col-sm-6 col-md-3 text-center">
-						<span class="chart" data-percent="100"><img class="img-responsive img-circle img-center" src="{% static 'main_site/img/ofir-circle.png' %}" alt=""></span>
-						<h2 class="text-center">Ofir Ovadia <small>CTO</small></h2>
-						<ul class="text-center socials">
-							<li><a href="https://www.facebook.com/ofiro" target="_blank"><i class="icon-facebook-sign"></i></a></li>
-							<li><a href="http://www.linkedin.com/in/ofirovadia" target="_blank"><i class="icon-linkedin-sign"></i></a></li>
-						</ul>
-						<p class="text-justified">With over 10 years of hands-on experience in software development of which 4 in Python, Ofir is the CTO and the technological authority at Purple Bit. His experience includes, but is not limited to: The IDF’s "Mamram" programming course; leading a software development team in one of the IDF’s top information security units; and excelling in his Computer Science BA degree studies.</p>
+					<div ng-repeat="manager in managers">
+						<div class="col-sm-6 col-md-3 col-md-push-3 text-center">
+							<span class="chart" data-percent="100"><img class="img-responsive img-circle img-center" ng-src="{% static '' %}{$ manager.picture $}" alt=""></span>
+							<h2 class="text-center">{$ manager.fullName $} <small>{$ manager.position $}</small></h2>
+							<ul class="text-center socials">
+								<li><a href="{$ manager.facebook $}" target="_blank"><i class="icon-facebook-sign"></i></a></li>
+								<li><a href="{$ manager.linkedin $}" target="_blank"><i class="icon-linkedin-sign"></i></a></li>
+							</ul>
+							<p class="text-justified">{$ manager.about $}</p>
+						</div>
 					</div>
 					<!-- <div class="col-sm-6 col-md-3 text-center">
 						<span class="chart" data-percent="100"><img class="img-responsive img-circle img-center" src="{% static 'main_site/img/about.jpg' %}" alt=""></span>
@@ -248,7 +256,7 @@
 		<!-- ==============================================
 		PORTFOLIO
 		=============================================== -->		
-		<section  id="portfolio">
+		<section  id="portfolio" ng-controller="projectListCtrl">
 		
 			<div id="portfolio-header" class="text-center">
 				
@@ -278,243 +286,42 @@
 			</div><!--End portfolio header -->
 			
 			<div class="container masonry-wrapper scrollimation fade-in">
-			
 				<div id="projects-container">
-				
+
+					<projects>
+
 					<!-- ==============================================
 					SINGLE PROJECT ITEM
 					=============================================== -->	
-					<a class="project-item backend front-end architecture" href="https://www.fitblok.com" data-images="{% static 'main_site/img/projects/fitblok-540-310.jpg' %}, {% static 'main_site/img/projects/fitblok-search-540-310.jpg' %}, {% static 'main_site/img/projects/fitblok-session-540-310.jpg' %}, {% static 'main_site/img/projects/fitblok-profile-540-310.jpg' %}">
+					<a class="project-item {$ project.projectTags $}" project-url="{$ project.url $}" data-images="{$ projectImages(project.projectId) $}" ng-repeat="project in projects">
 						
-						<img class="img-responsive project-image" src="{% static 'main_site/img/projects/fitblok-700-460.jpg' %}"  alt=""><!--Project thumb -->
+						<img class="img-responsive project-image" ng-src="{% static '' %}{$ project.thumb $}"  alt=""><!--Project thumb -->
 						
 						<div class="hover-mask">
-							<h2 class="project-title">Fitblok</h2><!--Project Title -->
-							<p>A marketplace for trainers and trainees &gt;</p><!--Project Subtitle -->
+							<h2 class="project-title">{$ project.title $}</h2><!--Project Title -->
+							<p>{$ project.subTitle $}</p><!--Project Subtitle -->
 						</div>
 						
 						<!--==== Project Preview HTML ====-->
 						
 						<div class="sr-only project-description">
-							<p>Fitblok is a <strong>Single Page Web-Application</strong> and an <strong>iPad</strong> application that delivers video lessons from trainers to trainees.</p>
+							<div ng-bind-html="project.desc"></div>
+							<img class="img-responsive img-center" ng-hide="project.logo == ''" ng-src="{% static '' %}{$ project.logo $}" alt="">
 
-							<p>Fitblok provides users with a gym-like experience and enables fitness trainers to develop their own brand and followers within the application. This vision was drilled-down by Purple Bit into technical details, through all the technical decisions and finally into a working, operational product. The application offers features such as managing the trainers’ trainee community and scheduling <strong>video streaming</strong> training sessions online. In addition, the application offers a wide variety of training styles with an intuitive search mechanism and <strong>reputation system</strong> to back it up. Finally, all <strong>billing and accounting</strong> is done through the application.</p>
-
-							<p>Fitblok's <strong>RESTful</strong> backend is developed using <strong>Django</strong>, the videos are streamed using <strong>Wowza</strong> video servers over <strong>Amazon EC2</strong> and the front-end itself is developed using <strong>AngularJS</strong>.</p>
-
-							<img class="img-responsive img-center" src="{% static 'main_site/img/projects/fitblok-logo.png' %}"  alt="">
-
-							<div class="row">
-								<div class="col-sm-3 col-md-2"><p><strong>Technologies:</strong></p></div><div class="col-sm-9 col-md-10"><p>Django, TastyPie, Wowza, FFMPEG, AngularJS, Heroku, Amazon S3, Amazon EC2, Redis, Stripe, Facebook SDK, PhantomJS, Celery, LESS.</p></div>
+							<div class="row" ng-hide="project.technologies == ''">
+								<div class="col-sm-3 col-md-2"><p><strong>Technologies:</strong></p></div><div class="col-sm-9 col-md-10" ng-bind-html="project.technologies"></div>
 							</div>
 							
-							<div class="row">
-								<div class="col-sm-3 col-md-2"><p><strong>Testimonial:</strong></p></div><div class="col-sm-9 col-md-10"><p>"I wanted to use the opportunity to say <strong>thank you!</strong> You guys are <strong>absolute rock stars</strong>. I am very fortunate to have found you and know that we wouldn't have gotten to a launch without you. You are a <strong>pleasure to work with</strong>. Smart, responsible, responsive, thorough and creative. I am sure that there is a lot I don't see in what you encounter on daily basis engineering the guts of the product and overcoming issues and bugs but <strong>I am sure you are doing impressive work because I see the final product</strong>." - Fitblok’s CEO</p></div>
+							<div class="row" ng-hide="project.testimonial == ''">
+								<div class="col-sm-3 col-md-2"><p><strong>Testimonial:</strong></p></div><div class="col-sm-9 col-md-10" ng-bind-html="project.testimonial"></div>
 							</div>
-						</div>
-						
+						</div>	
 					</a>
+				</projects>
+
 					<!-- ==============================================
 					END PROJECT ITEM
-					=============================================== -->						
-					
-					<a class="project-item backend front-end" href="http://ironsrc.com" data-images="{% static 'main_site/img/projects/ironsource-logo-540-310.jpg' %}">
-						
-						<img class="img-responsive project-image" src="{% static 'main_site/img/projects/ironsource-logo-350-230.jpg' %}" alt=""><!--Project thumb -->
-						
-						<div class="hover-mask">
-							<h2 class="project-title">ironSource</h2><!--Project Title -->
-							<p>Internal Management System &gt;</p><!--Project Subtitle -->
-						</div>
-						
-						<!--==== Project Preview HTML ====-->
-						
-						<div class="sr-only project-description">
-							<p>ironSource employs its technological skills to develop exceptional solutions for digital distribution, ensuring that content creators prosper &amp; enrich our world. ironSource worked with Purple Bit to execute a project that was outside ironSource's core business. As such ironSource developers could focus on the areas they know best and Purple Bit could supply ironSource with a fast turn-key solution saving both developers and management time for ironSource.</p>
-
-							<img class="img-responsive img-center" src="{% static 'main_site/img/projects/ironsource-logo-350-230.jpg' %}" alt="">
-
-							<div class="row">
-								<div class="col-sm-3 col-md-2"><p><strong>Technologies:</strong></p></div><div class="col-sm-9 col-md-10"><p>Django, Python, Aamazon EC2, Celery.</p></div>
-							</div>
-							
-						</div>
-						
-					</a><!--End Project Item -->
-
-					<a class="project-item front-end backend" href="http://almalinks.org/" data-images="{% static 'main_site/img/projects/almalinks-540-310.jpg' %}">
-						
-						<img class="img-responsive project-image" src="{% static 'main_site/img/projects/almalinks-350-230.jpg' %}"  alt=""><!--Project thumb -->
-						
-						<div class="hover-mask">
-							<h2 class="project-title">AlmaLinks</h2><!--Project Title -->
-							<p>AlmaLinks CRM &gt;</p><!--Project Subtitle -->
-						</div>
-						
-						<!--==== Project Preview HTML ====-->
-						
-						<div class="sr-only project-description">
-							<p class="clearfix">AlmaLinks is a nonprofit organization that strengthens the global Jewish community and its connection to Israel by forging relationships between young professionals and successful executives. Purple bit worked closely with AlmaLinks to build a CRM system to support AlmaLinks' internal processes including acceptance procedures of new members, as well as routine check ups on members' performance and satisfaction. These automated processes were tailor made to fit the existing methods of the organization.</p>
-
-							<div class="row">
-								<div class="col-sm-3 col-md-2"><p><strong>Technologies:</strong></p></div><div class="col-sm-9 col-md-10"><p>Django, Heroku, Amazon S3, Bootstrap, jQuery, LESS, LinkedIn API.</p></div>
-							</div>
-						</div>
-						
-					</a><!--End Project Item -->
-
-					<a class="project-item backend front-end" href="http://www.desti.com" data-images="{% static 'main_site/img/projects/desti-website-540-310.jpg' %}, {% static 'main_site/img/projects/desti-3-540-310.jpg' %}, {% static 'main_site/img/projects/desti-1-540-310.jpg' %}">
-						
-						<img class="img-responsive project-image" src="{% static 'main_site/img/projects/desti-logo-350-230.png' %}"  alt=""><!--Project thumb -->
-						
-						<div class="hover-mask">
-							<h2 class="project-title">Desti</h2><!--Project Title -->
-							<p>Server Backend &amp; More &gt;</p><!--Project Subtitle -->
-						</div>
-						
-						<!--==== Project Preview HTML ====-->
-						
-						<div class="sr-only project-description">
-							<p>In the technological world, core in-house programmers sometimes have to take on peripheral yet vital tasks, which use up precious time throughout the project.  In these cases, outsourcing a few tasks can make the difference between reaching the goal on time or not.</p>
-
-							<p>Desti.com hired us at Purple Bit in order to take charge of some of these tasks, and thus to help them reach a crucial deadline ontime. Our team quickly got things under control, from building a landing page for the company, through setting up the server backup solutions and up to getting the server infrastructure to production level.</p>
-
-							<img class="img-responsive img-center" src="{% static 'main_site/img/projects/desti-logo-350-230.png' %}"  alt="">
-
-							<div class="row">
-								<div class="col-sm-3 col-md-2"><p><strong>Technologies:</strong></p></div><div class="col-sm-9 col-md-10"><p>AWS, Python/Django, HTML5, JavaScript, CSS3/LESS, Munin, Monit, Boto, Fabric, Linux Server Administration, shell scripting.</p></div>
-							</div>
-							
-							<div class="row">
-								<div class="col-sm-3 col-md-2"><p><strong>Testimonial:</strong></p></div><div class="col-sm-9 col-md-10"><p>"Purple Bit were <strong>available and flexible</strong> with timing issues, and the whole logistic process was good. The team was <strong>very accommodating to our needs</strong> regarding timing, office hours, etc.</p>
-								<p>The team came with an <strong>excellent approach and can-do attitude</strong>. It was a <strong>joy</strong> to work with them, as this is really not trivial for people who are paid hourly. This is one of the important reasons <strong>we'd want to work with Purple Bit again</strong>." – Imri Goldberg, CTO at Desti.com</p></div>
-							</div>
-						</div>
-						
-					</a><!--End Project Item -->
-
-					<a class="project-item backend front-end architecture" href="http://www.chattybar.com/" data-images="{% static 'main_site/img/projects/chatty-540-310.jpg' %}">
-						
-						<img class="img-responsive project-image" src="{% static 'main_site/img/projects/chatty-230-350.jpg' %}"  alt=""><!--Project thumb -->
-						
-						<div class="hover-mask">
-							<h2 class="project-title">Chatty</h2><!--Project Title -->
-							<p>A chat widget for any site</p><!--Project Subtitle -->
-						</div>
-						
-						<!--==== Project Preview HTML ====-->
-						
-						<div class="sr-only project-description">
-							<p>Many website owners find it challenging to increase the average time people spend on site (and in direct relation, their income from advertising). Creating a chat system for online users is an effective way to do so.</p>
-
-							<p>Our main challenge when approaching the Chattybar project was how to create a complex and adaptable chat system, with simple integration.</p>
-
-							<p>The result was a complex backend system chat-room-widget, which works well with any browser and any resolution, added to any website using a single line of code.</p>
-
-							<p>Chattybar is able to support thousands of simultaneous users. On the other hand, the widget enjoys an intuitive User Interface that blends well with the look and feel of different websites.</p>
-
-							<img class="img-responsive img-center" src="{% static 'main_site/img/projects/chatty-logo.png' %}"  alt="">
-
-							<div class="row">
-								<div class="col-sm-3 col-md-2"><p><strong>Technologies:</strong></p></div><div class="col-sm-9 col-md-10"><p>JavaScript, jQuery, Python, Django, Amazon S3, Facebook API, MySQL.</p></div>
-							</div>
-						</div>
-						
-					</a><!--End Project Item -->
-
-					<a class="project-item backend" data-images="{% static 'main_site/img/projects/tlv-pubs-540-310.jpg' %}">
-						
-						<img class="img-responsive project-image" src="{% static 'main_site/img/projects/tlv-pubs-350-230.jpg' %}"  alt=""><!--Project thumb -->
-						
-						<div class="hover-mask">
-							<h2 class="project-title">Tel Aviv Pub Data Mining</h2><!--Project Title -->
-							<p>Data Mining</p><!--Project Subtitle -->
-						</div>
-						
-						<!--==== Project Preview HTML ====-->
-						
-						<div class="sr-only project-description">
-							<p>Tel Aviv is known as the gastronomic capital of Israel.  It is a home to thousands of restaurants, coffee shops and pubs all in a short distance from one another.</p>
-
-							<p>On this project, our client requested Business Intelligence regarding the Tel Aviv night life as it was presented online. Within an hour of scripting, we had created a list of all the local bars, and pinpointed them on a virtual map for maximal convenience.</p>
-
-							<div class="row">
-								<div class="col-sm-3 col-md-2"><p><strong>Technologies:</strong></p></div><div class="col-sm-9 col-md-10"><p>Python, Urllib, sqlite, JavaScript, Google Maps API.</p></div>
-							</div>
-						</div>
-						
-					</a><!--End Project Item -->
-
-					<a class="project-item training front-end architecture" href="https://github.com/purplebit/Rest-API-AngularJS-Presentation" data-images="{% static 'main_site/img/projects/angularjsil-540-310.jpg' %}, {% static 'main_site/img/projects/angularjsil-2-540-310.jpg' %}, {% static 'main_site/img/projects/angularjsil-3-540-310.jpg' %}">
-						
-						<img class="img-responsive project-image" src="{% static 'main_site/img/projects/angularjsil-350-230.jpg' %}"  alt=""><!--Project thumb -->
-						
-						<div class="hover-mask">
-							<h2 class="project-title">REST API w/ AngularJS</h2><!--Project Title -->
-							<p>Talk @ AngularJS-IL</p><!--Project Subtitle -->
-						</div>
-						
-						<!--==== Project Preview HTML ====-->
-						
-						<div class="sr-only project-description">
-							<p>AngularJS-IL is a monthly AgnularJS meetup that atracts hundreds of attendees each month. As a leader and advocates of AngularJS in Israel, Purple Bit's CTO, Ofir Ovadia, gave a talk about REST API and AngularJS</p>
-
-							<p>The talk was divided into 4 subjects that are aimed at AngularJS and web development beginners as well as advanced users: The motivation behind REST APIs, Using REST APIs in AngularJS, Authentication using REST APIs and Caching of server objects using AngularJS.</p>
-							<div class="row">
-								<div class="col-sm-3 col-md-2"><p><strong>Technologies:</strong></p></div><div class="col-sm-9 col-md-10"><p>AngularJS, REST APIs, JavaScript.</p></div>
-							</div>
-
-							<!-- <div class="row">
-								<div class="col-sm-3 col-md-2"><p><strong>Testimonial:</strong></p></div><div class="col-sm-9 col-md-10"><p>"" – ,  at </p></div>
-							</div> -->
-						</div>
-						
-					</a><!--End Project Item -->
-					
-					<a class="project-item front-end" data-images="{% static 'main_site/img/projects/wordsearchgamemaker-540-310.jpg' %}">
-						
-						<img class="img-responsive project-image" src="{% static 'main_site/img/projects/wordsearchgamemaker-350-230.jpg' %}"  alt=""><!--Project thumb -->
-						
-						<div class="hover-mask">
-							<h2 class="project-title">Word Search Game Maker</h2><!--Project Title -->
-							<p>Custom, printable puzzles for your students</p><!--Project Subtitle -->
-						</div>
-						
-						<!--==== Project Preview HTML ====-->
-						
-						<div class="sr-only project-description">
-							<p>Well-designed and sales-oriented landing pages can make the difference between success and failure in the online world.</p>
-
-							<p>Word Search Game Maker is a service which enables elementary school teachers to build their own customized word games.  The audience is reached via optimized Cost-Per-Click advertising campaigns on Google Adwords and Microsoft AdCenter (Bing).</p>
-
-							<p>The goal while creating the landing page was to achieve a simple micro-website with a clean design, which provides the customer with a high conversion rate, from visitors into customers.</p>
-
-							<div class="row">
-								<div class="col-sm-3 col-md-2"><p><strong>Technologies:</strong></p></div><div class="col-sm-9 col-md-10"><p>Python, Django, WordPress, Paypal billing, Google Analytics/Adwords, Microsoft AdCenter.</p></div>
-							</div>
-						</div>
-						
-					</a><!--End Project Item -->
-					
-					<a class="project-item front-end" href="#somelink" data-images="{% static 'main_site/img/projects/project-slide.jpg' %}, {% static 'main_site/img/projects/project-slide.jpg' %}, {% static 'main_site/img/projects/project-slide.jpg' %}">
-						
-						<img class="img-responsive project-image" src="{% static 'main_site/img/projects/project-thumb.jpg' %}" alt=""><!--Project thumb -->
-						
-						<div class="hover-mask">
-							<h2 class="project-title">Project 9</h2><!--Project Title -->
-							<p>amazon.com</p><!--Project Subtitle -->
-						</div>
-						
-						<!--==== Project Preview HTML ====-->
-						
-						<div class="sr-only project-description">
-							<p class="clearfix">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien risus, blandit at fringilla ac, varius sed dolor. Donec augue lacus, vulputate sed consectetur facilisis, interdum pharetra ligula. Nulla suscipit erat nibh, ut porttitor nisl dapibus eu.</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien risus, blandit at fringilla ac, varius sed dolor. Donec augue lacus, vulputate sed consectetur facilisis, interdum pharetra ligula. Nulla suscipit erat nibh, ut porttitor nisl dapibus eu.</p>
-							<img class="img-responsive img-center" src="{% static 'main_site/img/projects/company-logo.png' %}"  alt="">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien risus, blandit at fringilla ac, varius sed dolor. Donec augue lacus, vulputate sed consectetur facilisis, interdum pharetra ligula. Nulla suscipit erat nibh, ut porttitor nisl dapibus eu.</p>
-						</div>
-						
-					</a><!--End Project Item -->
+					=============================================== -->
 						
 				</div><!-- End projects --> 
 				
@@ -562,29 +369,18 @@
 		<!-- ==============================================
 		Testimonials Section
 		=============================================== -->	
-		<section id="testimonials">
+<section id="testimonials" ng-controller="testimonialCtrl">
 			<div class="container">
 				<div class="row scrollimation fade-in">
 					<div class="col-sm-1 twitter-icon">
 						<i class="icon-thumbs-up icon-3x"></i>
 					</div>
-					<div class="col-sm-11">
-						<div id="testimonials-slider" class="flexslider" >
-							<ul class="slides">
-								<li>
-									<p class="testimonial">"I wanted to use the opportunity to say <strong>thank you!</strong> You guys are <strong>absolute rock stars</strong>. I am very fortunate to have found you and know that we wouldn't have gotten to a launch without you. You are a <strong>pleasure to work with</strong>. Smart, responsible, responsive, thorough and creative. I am sure that there is a lot I don't see in what you encounter on daily basis engineering the guts of the product and overcoming issues and bugs but <strong>I am sure you are doing impressive work because I see the final product</strong>."</p>
-
-									<p class="testimonialBy">- Fitblok’s CEO</p>
-								</li>
-
-								<li>
-									<p class="testimonial">
-										"Purple Bit were <strong>available and flexible</strong> with timing issues, and the whole logistic process was good. The team was <strong>very accommodating to our needs</strong> regarding timing, office hours, etc.<br />
-										<br />
-										The team came with an <strong>excellent approach and can-do attitude</strong>. It was a <strong>joy</strong> to work with them, as this is really not trivial for people who are paid hourly. This is one of the important reasons <strong>we'd want to work with Purple Bit again</strong>."
-									</p>
-
-									<p class="testimonialBy">– Imri Goldberg, CTO at Desti.com</p>
+					<div class="col-sm-11" slides slide-container="testimonials-slider" slide-list="ul-slide" >
+						<div id="testimonials-slider">
+							<ul id="ul-slide">
+								<li ng-repeat="testimon in testimonials">
+									<p class="testimonial" ng-bind-html="testimon.text"></p>
+									<p class="testimonialBy" ng-bind-html="testimon.author"></p>
 								</li>
 							</ul>
 						</div>
@@ -597,8 +393,7 @@
 		<!-- ==============================================
 		CONTACT
 		=============================================== -->	
-		<section  id="contact">
-		
+		<section  id="contact" ng-controller="contactCtrl">
 			<div class="container">
 			
 				<h1 class="section-title scrollimation scale-in">Contact <span>now</span> for a free consultation</h1>
@@ -633,7 +428,7 @@
 					
 					<!--=== Contact Form ===-->
 
-					<form id="contact-form" class="col-sm-7 scrollimation fade-left" action="{% url 'backend:contact' %}" method="post" novalidate>
+					<form name="contactForm" id="contact-form" class="col-sm-7 scrollimation fade-right" ng-submit="submit('{% url 'backend:contact' %}')" novalidate>
 
 						{% csrf_token %}
 						
@@ -641,15 +436,18 @@
 						  <label class="control-label" for="contact-name">Name</label>
 						  <div class="controls">
 							<i class="icon-user"></i>
-							<input id="contact-name" name="contactName" placeholder="My name is..." class="form-control input-lg requiredField" type="text" data-error-empty="Please enter your name">
+							<input id="contact-name" name="contactName" placeholder="My name is..." class="form-control input-lg" type="text" ng-model="contact.name" required ng-blur="tryPristine()">
+							<span class="error-message" ng-show="contactForm.contactName.$error.required && contactForm.contactName.$dirty">Please enter your name.</span>
 						  </div>
 						</div><!-- End name input -->
 						
 						<div class="form-group">
 						  <label class="control-label" for="contact-mail">Email</label>
-						  <div class=" controls">
+						  <div class="controls">
 							<i class="icon-envelope"></i>
-							<input id="contact-mail" name="email" placeholder="Please respond at..." class="form-control input-lg requiredField" type="email" data-error-empty="Please enter your email" data-error-invalid="Invalid email address">
+							<input id="contact-mail" name="contactEmail" placeholder="Please respond at..." class="form-control input-lg" type="email" ng-model="contact.email" required ng-blur="tryPristine()">
+							<span class="error-message" ng-show="contactForm.contactEmail.$error.required && contactForm.contactEmail.$dirty">Please enter your email</span>
+							<span class="error-message" ng-show="contactForm.contactEmail.$error.email">Invalid email address</span>
 						  </div>
 						</div><!-- End email input -->
 						
@@ -657,12 +455,16 @@
 						  <label class="control-label" for="contact-message">Message</label>
 							<div class="controls">
 								<i class="icon-comment"></i>
-								<textarea id="contact-message" name="comments"  placeholder="I wanna talk about..." class="form-control input-lg requiredField" rows="5" data-error-empty="Please enter your message"></textarea>
+								<textarea id="contact-message" name="contactMessage"  placeholder="I wanna talk about..." class="form-control input-lg" rows="5" ng-model="contact.message" required ng-blur="tryPristine()"></textarea>
+								<span class="error-message" ng-show="contactForm.contactMessage.$error.required && contactForm.contactMessage.$dirty">Please enter your message</span>
 							</div>
 						</div><!-- End textarea -->
 						
-						<p><button name="submit" type="submit" class="btn btn-theme btn-lg" data-error-message="Error!" data-sending-message="Sending..." data-ok-message="Message Sent" data-server-error="Oops! Error..."><i class="icon-location-arrow"></i>Send Message</button></p>
-						<input type="hidden" name="submitted" id="submitted" value="true" />
+						<p>
+							<button name="submit" type="submit" class="btn btn-theme btn-lg" ng-disabled="contactForm.$invalid">
+								<i ng-class="contactBtn.icon"></i> {$ contactBtn.message $}
+							</button>
+						</p>
 						
 					</form><!-- End contact-form -->
 				  
@@ -716,8 +518,9 @@
 		<script src="{% static 'main_site/js/jquery.masonry.min.js' %}"></script>
 		<script src="{% static 'main_site/js/waypoints.min.js' %}"></script>
 		<script src="{% static 'main_site/js/jquery.easypiechart.js' %}"></script>
-		<script src="{% static 'main_site/js/contact.js' %}"></script>
+		<!-- <script src="{% static 'main_site/js/contact.js' %}"></script> -->
 		<script src="{% static 'main_site/js/designr.js' %}"></script>
+
 		
 	</body>
 	
