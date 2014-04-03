@@ -18,7 +18,7 @@ angular.module('purplebit').service('managementSrv', function() {
 	}
 
 	var edan = new this.Manager(
-		'main_site/img/about.jpg',
+		'main_site/img/edan-profile.jpg',
 		'Edan Maor',
 		'CEO',
 		'https://www.facebook.com/edan.maor',
