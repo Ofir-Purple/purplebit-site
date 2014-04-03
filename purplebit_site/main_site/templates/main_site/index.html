@@ -281,6 +281,30 @@
         </section><!-- End portfolio section -->
 
 		<!-- ==============================================
+		Testimonials Section
+		=============================================== -->	
+        <section id="testimonials" ng-controller="testimonialCtrl">
+			<div class="container">
+				<div class="row scrollimation fade-in">
+					<div class="col-sm-1 twitter-icon">
+						<i class="icon-thumbs-up icon-3x"></i>
+					</div>
+					<div class="col-sm-11" slides slide-container="testimonials-slider" slide-list="ul-slide" >
+						<div id="testimonials-slider">
+							<ul id="ul-slide">
+								<li ng-repeat="testimon in testimonials">
+									<p class="testimonial" ng-bind-html="testimon.text"></p>
+									<p class="testimonialBy" ng-bind-html="testimon.author"></p>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div><!-- End row -->
+			</div><!-- End container -->
+			
+		</section><!-- End Testimonials section -->
+
+		<!-- ==============================================
 		SERVICES
 		=============================================== -->
 		<section id="services">
@@ -362,29 +386,6 @@
 		</section><!--End skills section -->
 	
 		
-		<!-- ==============================================
-		Testimonials Section
-		=============================================== -->	
-        <section id="testimonials" ng-controller="testimonialCtrl">
-			<div class="container">
-				<div class="row scrollimation fade-in">
-					<div class="col-sm-1 twitter-icon">
-						<i class="icon-thumbs-up icon-3x"></i>
-					</div>
-					<div class="col-sm-11" slides slide-container="testimonials-slider" slide-list="ul-slide" >
-						<div id="testimonials-slider">
-							<ul id="ul-slide">
-								<li ng-repeat="testimon in testimonials">
-									<p class="testimonial" ng-bind-html="testimon.text"></p>
-									<p class="testimonialBy" ng-bind-html="testimon.author"></p>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div><!-- End row -->
-			</div><!-- End container -->
-			
-		</section><!-- End Testimonials section -->
 
 		<!-- ==============================================
 		CONTACT
