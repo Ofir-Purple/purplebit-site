@@ -167,6 +167,119 @@
 			
 		</section><!--End about section -->
 
+        <!-- ==============================================
+        PORTFOLIO
+        =============================================== -->		
+        <section  id="portfolio" ng-controller="projectListCtrl">
+
+        <div id="portfolio-header" class="text-center">
+
+            <h1 class="section-title scrollimation scale-in">A peek into our <span>work</span><i class="icon-eye-open"></i></h1>
+
+            <!--==== Portfolio Filters ====-->
+            <div id="filter-works">
+                <ul>
+                    <li class="active">
+                    <a href="#fake" data-filter="*">All</a>
+                    </li>
+                    <li>
+                    <a href="#fake" data-filter=".backend">Backend</a>
+                    </li>
+                    <li>
+                    <a href="#fake" data-filter=".front-end">Front End</a>
+                    </li>
+                    <li>
+                    <a href="#fake" data-filter=".architecture">Architecture</a>
+                    </li>
+                    <li>
+                    <a href="#fake" data-filter=".training">Training</a>
+                    </li>
+                </ul>
+            </div><!--End portfolio filters -->
+
+        </div><!--End portfolio header -->
+
+        <div class="container masonry-wrapper scrollimation fade-in">
+            <div id="projects-container">
+
+                <projects>
+
+                <!-- ==============================================
+                SINGLE PROJECT ITEM
+                =============================================== -->	
+                <a class="project-item {$ project.projectTags $}" project-url="{$ project.url $}" data-images="{$ projectImages(project.projectId) $}" ng-repeat="project in projects">
+
+                    <img class="img-responsive project-image" ng-src="{% static '' %}{$ project.thumb $}"  alt=""><!--Project thumb -->
+
+                    <div class="hover-mask">
+                        <h2 class="project-title">{$ project.title $}</h2><!--Project Title -->
+                        <p>{$ project.subTitle $}</p><!--Project Subtitle -->
+                    </div>
+
+                    <!--==== Project Preview HTML ====-->
+
+                    <div class="sr-only project-description">
+                        <div ng-bind-html="project.desc"></div>
+                        <img class="img-responsive img-center" ng-hide="project.logo == ''" ng-src="{% static '' %}{$ project.logo $}" alt="">
+
+                        <div class="row" ng-hide="project.technologies == ''">
+                            <div class="col-sm-3 col-md-2"><p><strong>Technologies:</strong></p></div><div class="col-sm-9 col-md-10" ng-bind-html="project.technologies"></div>
+                        </div>
+
+                        <div class="row" ng-hide="project.testimonial == ''">
+                            <div class="col-sm-3 col-md-2"><p><strong>Testimonial:</strong></p></div><div class="col-sm-9 col-md-10" ng-bind-html="project.testimonial"></div>
+                        </div>
+                    </div>	
+                </a>
+                </projects>
+
+                <!-- ==============================================
+                END PROJECT ITEM
+                =============================================== -->
+
+            </div><!-- End projects --> 
+
+        </div><!-- End container --> 
+
+        <!-- ==============================================
+        PROJECT PREVIEW MODAL (Do not alter this markup)
+        =============================================== -->	
+        <div id="project-modal" class="modal fade">
+
+            <div class="modal-dialog">
+
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+
+                    <div class="modal-body">
+
+                        <div class="left-col">
+                            <img class="img-responsive" src="{% static 'main_site/img/imac.png' %}" alt="">
+                            <div class="loader"></div>
+                            <div class="image-wrapper"></div>
+                        </div>
+
+                        <h1></h1>
+
+                        <div class="project-descr"></div>
+
+                        <div class="clearfix"></div>
+
+                        <p class="text-center"><a class="btn btn-theme" target="_blank"><i class="icon-external-link"></i>Visit Website</a></p>
+
+                    </div><!-- End modal-body -->
+
+                </div><!-- End modal-content -->
+
+            </div><!-- End modal-dialog -->
+
+        </div><!-- End modal -->
+
+        </section><!-- End portfolio section -->
+
 		<!-- ==============================================
 		SERVICES
 		=============================================== -->
@@ -248,118 +361,6 @@
 			
 		</section><!--End skills section -->
 	
-		<!-- ==============================================
-		PORTFOLIO
-		=============================================== -->		
-		<section  id="portfolio" ng-controller="projectListCtrl">
-		
-			<div id="portfolio-header" class="text-center">
-				
-				<h1 class="section-title scrollimation scale-in">A peek into our <span>work</span><i class="icon-eye-open"></i></h1>
-				
-				<!--==== Portfolio Filters ====-->
-				<div id="filter-works">
-					<ul>
-						<li class="active">
-							<a href="#fake" data-filter="*">All</a>
-						</li>
-						<li>
-							<a href="#fake" data-filter=".backend">Backend</a>
-						</li>
-						<li>
-							<a href="#fake" data-filter=".front-end">Front End</a>
-						</li>
-						<li>
-							<a href="#fake" data-filter=".architecture">Architecture</a>
-						</li>
-						<li>
-							<a href="#fake" data-filter=".training">Training</a>
-						</li>
-					</ul>
-				</div><!--End portfolio filters -->
-				
-			</div><!--End portfolio header -->
-			
-			<div class="container masonry-wrapper scrollimation fade-in">
-				<div id="projects-container">
-
-					<projects>
-
-					<!-- ==============================================
-					SINGLE PROJECT ITEM
-					=============================================== -->	
-					<a class="project-item {$ project.projectTags $}" project-url="{$ project.url $}" data-images="{$ projectImages(project.projectId) $}" ng-repeat="project in projects">
-						
-						<img class="img-responsive project-image" ng-src="{% static '' %}{$ project.thumb $}"  alt=""><!--Project thumb -->
-						
-						<div class="hover-mask">
-							<h2 class="project-title">{$ project.title $}</h2><!--Project Title -->
-							<p>{$ project.subTitle $}</p><!--Project Subtitle -->
-						</div>
-						
-						<!--==== Project Preview HTML ====-->
-						
-						<div class="sr-only project-description">
-							<div ng-bind-html="project.desc"></div>
-							<img class="img-responsive img-center" ng-hide="project.logo == ''" ng-src="{% static '' %}{$ project.logo $}" alt="">
-
-							<div class="row" ng-hide="project.technologies == ''">
-								<div class="col-sm-3 col-md-2"><p><strong>Technologies:</strong></p></div><div class="col-sm-9 col-md-10" ng-bind-html="project.technologies"></div>
-							</div>
-							
-							<div class="row" ng-hide="project.testimonial == ''">
-								<div class="col-sm-3 col-md-2"><p><strong>Testimonial:</strong></p></div><div class="col-sm-9 col-md-10" ng-bind-html="project.testimonial"></div>
-							</div>
-						</div>	
-					</a>
-				</projects>
-
-					<!-- ==============================================
-					END PROJECT ITEM
-					=============================================== -->
-						
-				</div><!-- End projects --> 
-				
-			</div><!-- End container --> 
-			
-			<!-- ==============================================
-			PROJECT PREVIEW MODAL (Do not alter this markup)
-			=============================================== -->	
-			<div id="project-modal" class="modal fade">
-			
-				<div class="modal-dialog">
-				
-					<div class="modal-content">
-					
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-						</div>
-						
-						<div class="modal-body">
-						
-							<div class="left-col">
-								<img class="img-responsive" src="{% static 'main_site/img/imac.png' %}" alt="">
-								<div class="loader"></div>
-								<div class="image-wrapper"></div>
-							</div>
-							
-							<h1></h1>
-							
-							<div class="project-descr"></div>
-							
-							<div class="clearfix"></div>
-							
-							<p class="text-center"><a class="btn btn-theme" target="_blank"><i class="icon-external-link"></i>Visit Website</a></p>
-						
-						</div><!-- End modal-body -->
-						
-					</div><!-- End modal-content -->
-					
-				</div><!-- End modal-dialog -->
-				
-			</div><!-- End modal -->
-			
-		</section><!-- End portfolio section -->
 		
 		<!-- ==============================================
 		Testimonials Section
