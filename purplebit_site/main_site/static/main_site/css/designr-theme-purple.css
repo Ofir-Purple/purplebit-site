@@ -572,7 +572,8 @@ header.jumbotron{
 
 #management {
     padding-top:80px;
-    color:#6a4b72;
+    color:#fff;
+    background: #7A539B;
 }
 
 #management h1 {
