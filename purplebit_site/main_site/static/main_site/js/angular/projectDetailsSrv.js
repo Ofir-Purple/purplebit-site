@@ -76,7 +76,7 @@ angular.module('purplebit').service('projectDetailsSrv', function($sanitize, STA
 			'',
 			'main_site/img/projects/sap-thumb-350-230.jpg',
 			'main_site/img/projects/sap-logo-200-200.jpg',
-			'project-tags',
+			'backend architecture',
 			['main_site/img/projects/sap-540-310.png']
         ));
 
@@ -87,10 +87,10 @@ angular.module('purplebit').service('projectDetailsSrv', function($sanitize, STA
 			'<p>Autodesk required a new, consumer-facing web portal.</p><p>Autodesk retained Purple Bit for our expertise with building complex client-side Single-page Applications.</p><p>In addition to building the SPA, Purple Bit took an active part in helping architect and build the REST-api on which the SPA is built.</p>',
 			'<p>Angular.js, Yeoman, Restangular, Amazon AWS (EC2, S3), Scala, REST</p>',
 			'',
-			'http://www.autodesk.com/',
+			'',
 			'main_site/img/projects/autodesk-thumb-350-230.png',
 			'main_site/img/projects/autodesk-logo-333-200.png',
-			'project-tags',
+			'architecture backend front-end',
 			['main_site/img/projects/autodesk-540-310.png']
         ));
 
@@ -101,10 +101,10 @@ angular.module('purplebit').service('projectDetailsSrv', function($sanitize, STA
 			'<p>DBMotion, a company that builds Healthcare Interoperability platforms, began using Python/Django as part of their integration solution.</p><p>As experts in Python/Django, Purple Bit helped train the team and provided architectural insight into building the new product.</p><p>Our architectural work involved planning the database store for various pieces of data required for the application, as well as performing research and gaining a deep understanding of the abilities of Django\'s Admin interface in dealing with various specialised product requirements.</p>',
 			'<p>Python, Django, SQL Server.</p>',
 			'',
-			'https://www.dbmotion.com',
+			'',
 			'main_site/img/projects/dbmotion-logo.png',
 			'main_site/img/projects/dbmotion-logo.png',
-			'backend front-end architecture training',
+			'backend architecture training',
 			['main_site/img/projects/dbmotion-logo.png']
         ));
 
@@ -118,7 +118,7 @@ angular.module('purplebit').service('projectDetailsSrv', function($sanitize, STA
 			'https://www.allscripts.com/',
 			'main_site/img/projects/allscripts-thumb-350-230.jpg',
 			'main_site/img/projects/allscripts-logo-300-65.jpg',
-			'project-tags',
+			'backend',
 			['main_site/img/projects/allscripts-540-310.png']
         ));
 
@@ -132,7 +132,7 @@ angular.module('purplebit').service('projectDetailsSrv', function($sanitize, STA
 			'https://www.combitel.com.au/',
 			'main_site/img/projects/combitel-thumb-350-230.png',
 			'main_site/img/projects/combitel-logo-193-45.png',
-			'project-tags',
+			'backend front-end',
 			['main_site/img/projects/combitel-540-310.png']
         ));
 
@@ -140,7 +140,7 @@ angular.module('purplebit').service('projectDetailsSrv', function($sanitize, STA
 		this.addProject(new this.Project(
 			'AlmaLinks',
 			'AlmaLinks CRM >',
-            false,
+            true,
 			'<p class="clearfix">AlmaLinks is a nonprofit organization that strengthens the global Jewish community and its connection to Israel by forging relationships between young professionals and successful executives. Purple bit worked closely with AlmaLinks to build a CRM system to support AlmaLinks&#8217; internal processes including acceptance procedures of new members, as well as routine check ups on members&#8217; performance and satisfaction. These automated processes were tailor made to fit the existing methods of the organization.</p>',
 			'<p>Django, Heroku, Amazon S3, Bootstrap, jQuery, LESS, LinkedIn API.</p>',
 			'',
@@ -164,34 +164,6 @@ angular.module('purplebit').service('projectDetailsSrv', function($sanitize, STA
 			'backend front-end',
 			['main_site/img/projects/ironsource-540-310.png']
         ));
-		
-		this.addProject(new this.Project(
-			'AtLargeinc.',
-			'AtLargeinc. >',
-            false,
-			'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien risus, blandit at fringilla ac, varius sed dolor. Donec augue lacus, vulputate sed consectetur facilisis, interdum pharetra ligula. Nulla suscipit erat nibh, ut porttitor nisl dapibus eu.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien risus, blandit at fringilla ac, varius sed dolor. Donec augue lacus, vulputate sed consectetur facilisis, interdum pharetra ligula. Nulla suscipit erat nibh, ut porttitor nisl dapibus eu.</p>',
-			'<p>Technologies</p>',
-			'<p>Testimonials</p>',
-			'http://wirex-systems.com/',
-			'main_site/img/projects/atlarge-thumb-350-230.jpg',
-			'main_site/img/projects/atlarge-logo.jpeg',
-			'project-tags',
-			['main_site/img/projects/atlargeinc-540-310.png']
-		));
-
-		this.addProject(new this.Project(
-			'WireX',
-			'WireX >',
-            false,
-			'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien risus, blandit at fringilla ac, varius sed dolor. Donec augue lacus, vulputate sed consectetur facilisis, interdum pharetra ligula. Nulla suscipit erat nibh, ut porttitor nisl dapibus eu.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien risus, blandit at fringilla ac, varius sed dolor. Donec augue lacus, vulputate sed consectetur facilisis, interdum pharetra ligula. Nulla suscipit erat nibh, ut porttitor nisl dapibus eu.</p>',
-			'<p>Technologies</p>',
-			'<p>Testimonials</p>',
-			'http://wirex-systems.com/',
-			'main_site/img/projects/wirex-thumb-350-230.png',
-			'main_site/img/projects/wirex-thumb-350-230.png',
-			'project-tags',
-			['main_site/img/projects/wirex-540-310.png']
-		));
 
         this.addProject(new this.Project(
 			'Desti',
@@ -208,32 +180,61 @@ angular.module('purplebit').service('projectDetailsSrv', function($sanitize, STA
                 'main_site/img/projects/desti-3-540-310.jpg',
             'main_site/img/projects/desti-1-540-310.jpg']
         ));
+		
+		this.addProject(new this.Project(
+			'AtLargeinc.',
+			'AtLargeinc. >',
+            false,
+			'',
+			'',
+			'',
+			'',
+			'main_site/img/projects/atlarge-thumb-350-230.jpg',
+			'main_site/img/projects/atlarge-logo.jpeg',
+			'backend front-end architecture',
+			['main_site/img/projects/atlargeinc-540-310.png']
+		));
+
+		this.addProject(new this.Project(
+			'WireX',
+			'WireX >',
+            false,
+			'',
+			'',
+			'',
+			'',
+			'main_site/img/projects/wirex-thumb-350-230.png',
+			'main_site/img/projects/wirex-thumb-350-230.png',
+			'backend front-end architecture',
+			['main_site/img/projects/wirex-540-310.png']
+		));
+
 
 		this.addProject(new this.Project(
 			'Toys Alive',
 			'Toys Alive >',
             false,
-			'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien risus, blandit at fringilla ac, varius sed dolor. Donec augue lacus, vulputate sed consectetur facilisis, interdum pharetra ligula. Nulla suscipit erat nibh, ut porttitor nisl dapibus eu.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien risus, blandit at fringilla ac, varius sed dolor. Donec augue lacus, vulputate sed consectetur facilisis, interdum pharetra ligula. Nulla suscipit erat nibh, ut porttitor nisl dapibus eu.</p>',
-			'<p>Technologies</p>',
-			'<p>Testimonials</p>',
+			'<p>Toys Alive, a developer of smart toys, hired Purple Bit to help rebuild their internal sales systems.</p><p>The work we did for Toys Alive involved linking up with Salesforce and internal Excels, which were the systems in use by the sales staff at the time, and processing them to create a consumer and business-user facing website.</p>',
+			'<p>Python, Django, Excel processing, Salesforce integration, HTML/CSS/JS.</p>',
+			'',
 			'http://www.toysalive.com/',
 			'main_site/img/projects/toysalive-thumb-350-230.png',
 			'main_site/img/projects/toysalive-logo-300-130.png',
-			'project-tags',
+			'backend front-end',
 			['main_site/img/projects/toysalive-540-310.png']
 		));
 
 		this.addProject(new this.Project(
 			'$ocial',
-			'Social >',
-            false,
-			'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien risus, blandit at fringilla ac, varius sed dolor. Donec augue lacus, vulputate sed consectetur facilisis, interdum pharetra ligula. Nulla suscipit erat nibh, ut porttitor nisl dapibus eu.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien risus, blandit at fringilla ac, varius sed dolor. Donec augue lacus, vulputate sed consectetur facilisis, interdum pharetra ligula. Nulla suscipit erat nibh, ut porttitor nisl dapibus eu.</p>',
-			'<p>Technologies</p>',
-			'<p>Testimonials</p>',
+			'$ocial >',
+            true,
+			'<p>$ocial, a startup that connects advertisers to celebrities for a unique advertising opportunity, contracted Purple Bit to help develop their client-facing admin interface, an Angular.js applications.</p><p>Purple Bit\'s experience with developing Django REST Api servers consumed by Restangular allowed quick building and factoring of the application.</p><p>In addition to the front-end components, Purple Bit helped re-architect the server-side makeup of $ocial\'s service.</p>',
+			'<p>Python, Django, REST Api, Angular.js, django-rest-framework, Restangular.</p>',
+			'',
 			'http://www.dollarsocial.com/',
 			'main_site/img/projects/social-thumb-350-230.png',
 			'main_site/img/projects/social-logo-165-49.png',
-			'project-tags',
+			'backend front-end architecture',
 			['main_site/img/projects/social-540-310.png']
 		));
 
@@ -241,20 +242,20 @@ angular.module('purplebit').service('projectDetailsSrv', function($sanitize, STA
 			'WaveDeck',
 			'WaveDeck >',
             false,
-			'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien risus, blandit at fringilla ac, varius sed dolor. Donec augue lacus, vulputate sed consectetur facilisis, interdum pharetra ligula. Nulla suscipit erat nibh, ut porttitor nisl dapibus eu.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien risus, blandit at fringilla ac, varius sed dolor. Donec augue lacus, vulputate sed consectetur facilisis, interdum pharetra ligula. Nulla suscipit erat nibh, ut porttitor nisl dapibus eu.</p>',
-			'<p>Technologies</p>',
-			'<p>Testimonials</p>',
+			'',
+			'',
+			'',
 			'http://www.wavedeck.com/',
 			'main_site/img/projects/wavedeck-thumb-350-230.png',
 			'main_site/img/projects/wavedeck-thumb-350-230.png',
-			'project-tags',
+			'backend',
 			['main_site/img/projects/wavedeck-540-310.png']
 		));
 
 		this.addProject(new this.Project(
 			'Chatty',
 			'A chat widget for any site >',
-            false,
+            true,
 			'<p>Many website owners find it challenging to increase the average time people spend on site (and in direct relation, their income from advertising). Creating a chat system for online users is an effective way to do so.</p><p>Our main challenge when approaching the Chattybar project was how to create a complex and adaptable chat system, with simple integration.</p><p>The result was a complex backend system chat-room-widget, which works well with any browser and any resolution, added to any website using a single line of code.</p><p>Chattybar is able to support thousands of simultaneous users. On the other hand, the widget enjoys an intuitive User Interface that blends well with the look and feel of different websites.</p>',
 			'<p>JavaScript, jQuery, Python, Django, Amazon S3, Facebook API, MySQL.</p>',
 			'',
@@ -268,7 +269,7 @@ angular.module('purplebit').service('projectDetailsSrv', function($sanitize, STA
 		this.addProject(new this.Project(
 			'Tel Aviv Pub Data Mining',
 			'Data Mining >',
-            false,
+            true,
 			'<p>Tel Aviv is known as the gastronomic capital of Israel.  It is a home to thousands of restaurants, coffee shops and pubs all in a short distance from one another.</p><p>On this project, our client requested Business Intelligence regarding the Tel Aviv night life as it was presented online. Within an hour of scripting, we had created a list of all the local bars, and pinpointed them on a virtual map for maximal convenience.</p>',
 			'<p>Python, Urllib, sqlite, JavaScript, Google Maps API.</p>',
 			'',
@@ -282,7 +283,7 @@ angular.module('purplebit').service('projectDetailsSrv', function($sanitize, STA
 		this.addProject(new this.Project(
 			'REST API w/ AngularJS',
 			'Talk @ AngularJS-IL >',
-            false,
+            true,
 			'<p>AngularJS-IL is a monthly AgnularJS meetup that atracts hundreds of attendees each month. As a leader and advocates of AngularJS in Israel, Purple Bit&#8217;s CTO, Ofir Ovadia, gave a talk about REST API and AngularJS</p><p>The talk was divided into 4 subjects that are aimed at AngularJS and web development beginners as well as advanced users: The motivation behind REST APIs, Using REST APIs in AngularJS, Authentication using REST APIs and Caching of server objects using AngularJS.</p>',
 			'<p>AngularJS, REST APIs, JavaScript.</p>',
 			'',
