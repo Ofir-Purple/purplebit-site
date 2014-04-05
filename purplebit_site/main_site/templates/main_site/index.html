@@ -157,8 +157,7 @@
 						<h1>Hello, We're Purple Bit</h1>
                         <p>We create <strong>beautiful and usable </strong> web applications for our customers using a <strong>Lean Development Process</strong>, built on <a href="https://www.djangoproject.com/" target="_blank">Django</a> and <a href="http://angularjs.org/" target="_blank">AngularJS</a>. </p>
                         <p>Purple Bit was founded by veterans of an <strong>elite Israeli programming unit</strong>, with over 10 years of experience building products and managing software teams. We built Purple Bit with two goals: create amazing products through technical excellence, and build a team of super-smart developers who <strong>love programming.</strong><p>
-                        <p>Our process is built on a <strong>Lean/Agile</strong> methodology, which we have been using and teaching for many years. We keep in close touch with our clients, and transform their vision into a working product that <strong>users and customers love.</strong></p>
-						<!-- <p></p> -->
+                        <p>Our process is built on a <strong>Lean/Agile</strong> methodology, which we have been using and teaching for many years. We've worked with everything from small 1-man companies to the largest organisations, and with customers from all around the world.</p>
 						<a href="#portfolio" class="btn btn-theme transparent scrollto">View our Portfolio</a>
 					</div>
 				</div><!--End row -->
@@ -174,7 +173,7 @@
 
         <div id="portfolio-header" class="text-center">
 
-            <h1 class="section-title scrollimation scale-in">A peek into our <span>work</span><i class="icon-eye-open"></i></h1>
+            <h1 class="section-title scrollimation scale-in">We've worked <span>with...</span><i class="icon-eye-open"></i></h1>
 
             <!--==== Portfolio Filters ====-->
             <div id="filter-works">
@@ -203,34 +202,33 @@
             <div id="projects-container">
 
                 <projects>
+                    <!-- ==============================================
+                    SINGLE PROJECT ITEM
+                    =============================================== -->	
+                    <a class="project-item {$ project.projectTags $}" ng-class="{displayProjectPopup: project.displayPopup}" project-url="{$ project.url $}" data-images="{$ projectImages(project.projectId) $}" ng-repeat="project in projects">
 
-                <!-- ==============================================
-                SINGLE PROJECT ITEM
-                =============================================== -->	
-                <a class="project-item {$ project.projectTags $}" project-url="{$ project.url $}" data-images="{$ projectImages(project.projectId) $}" ng-repeat="project in projects">
+                        <img class="img-responsive project-image" ng-src="{% static '' %}{$ project.thumb $}"  alt=""><!--Project thumb -->
 
-                    <img class="img-responsive project-image" ng-src="{% static '' %}{$ project.thumb $}"  alt=""><!--Project thumb -->
-
-                    <div class="hover-mask">
-                        <h2 class="project-title">{$ project.title $}</h2><!--Project Title -->
-                        <p>{$ project.subTitle $}</p><!--Project Subtitle -->
-                    </div>
-
-                    <!--==== Project Preview HTML ====-->
-
-                    <div class="sr-only project-description">
-                        <div ng-bind-html="project.desc"></div>
-                        <img class="img-responsive img-center" ng-hide="project.logo == ''" ng-src="{% static '' %}{$ project.logo $}" alt="">
-
-                        <div class="row" ng-hide="project.technologies == ''">
-                            <div class="col-sm-3 col-md-2"><p><strong>Technologies:</strong></p></div><div class="col-sm-9 col-md-10" ng-bind-html="project.technologies"></div>
+                        <div class="hover-mask" ng-hide="!project.displayPopup">
+                            <h2 class="project-title">{$ project.title $}</h2><!--Project Title -->
+                            <p>{$ project.subTitle $}</p><!--Project Subtitle -->
                         </div>
 
-                        <div class="row" ng-hide="project.testimonial == ''">
-                            <div class="col-sm-3 col-md-2"><p><strong>Testimonial:</strong></p></div><div class="col-sm-9 col-md-10" ng-bind-html="project.testimonial"></div>
-                        </div>
-                    </div>	
-                </a>
+                        <!--==== Project Preview HTML ====-->
+
+                        <div class="sr-only project-description">
+                            <div ng-bind-html="project.desc"></div>
+                            <img class="img-responsive img-center" ng-hide="project.logo == ''" ng-src="{% static '' %}{$ project.logo $}" alt="">
+
+                            <div class="row" ng-hide="project.technologies == ''">
+                                <div class="col-sm-3 col-md-2"><p><strong>Technologies:</strong></p></div><div class="col-sm-9 col-md-10" ng-bind-html="project.technologies"></div>
+                            </div>
+
+                            <div class="row" ng-hide="project.testimonial == ''">
+                                <div class="col-sm-3 col-md-2"><p><strong>Testimonial:</strong></p></div><div class="col-sm-9 col-md-10" ng-bind-html="project.testimonial"></div>
+                            </div>
+                        </div>	
+                    </a>
                 </projects>
 
                 <!-- ==============================================
