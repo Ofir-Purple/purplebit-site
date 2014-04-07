@@ -270,7 +270,7 @@ angular.module('purplebit').service('projectDetailsSrv', function($sanitize, STA
 			'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien risus, blandit at fringilla ac, varius sed dolor. Donec augue lacus, vulputate sed consectetur facilisis, interdum pharetra ligula. Nulla suscipit erat nibh, ut porttitor nisl dapibus eu.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien risus, blandit at fringilla ac, varius sed dolor. Donec augue lacus, vulputate sed consectetur facilisis, interdum pharetra ligula. Nulla suscipit erat nibh, ut porttitor nisl dapibus eu.</p>',
 			'<p>Technologies</p>',
 			'<p>Testimonials</p>',
-			'http://wirex-systems.com/',
+			'http://www.atlargeinc.com/',
 			'main_site/img/projects/atlarge-thumb-350-230.jpg',
 			'main_site/img/projects/atlarge-logo.jpeg',
 			'project-tags',

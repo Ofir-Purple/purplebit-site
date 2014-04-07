@@ -302,7 +302,7 @@
 					<!-- ==============================================
 					SINGLE PROJECT ITEM
 					=============================================== -->	
-					<a class="project-item {$ project.projectTags $}" project-url="{$ project.url $}" data-images="{$ projectImages(project.projectId) $}" ng-repeat="project in projects">
+					<a class="project-item {$ project.projectTags $}" project-url="{$ project.url $}" data-images="{$ projectImages(project.projectId) $}" ng-repeat="project in projects" ng-click="gaSendProject($index)">
 						
 						<img class="img-responsive project-image" ng-src="{% static '' %}{$ project.thumb $}"  alt=""><!--Project thumb -->
 						

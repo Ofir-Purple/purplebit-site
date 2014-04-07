@@ -7,4 +7,9 @@ angular.module('purplebit').controller('projectListCtrl', function($scope, $sani
 		return $scope.projects[projectId].dataImages.join(",");
 	}
 
+	// send GA event on project click
+	$scope.gaSendProject = function(ind) {
+		ga('send', 'event', 'button', 'click', projectDetailsSrv.projectStorage[ind].title);
+	}
+
 })
