@@ -22,6 +22,8 @@ DATABASES = {'default': dj_database_url.config()}
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = [
     'purplebit-website-prod.herokuapp.com',
+    'purplebit.com',
+    'www.purplebit.com',
 ]
 
 # Local time zone for this installation. Choices can be found here:
