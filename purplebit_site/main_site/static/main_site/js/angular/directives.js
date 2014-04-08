@@ -20,6 +20,9 @@ angular.module('purplebit').directive('projects', function() {
 		link: function(scope, element, attrs) {
 			$(document).ready(function() {
 				$('.project-item').on('click', function(e){
+                    if (!($(this).hasClass('displayProjectPopup'))) {
+                        return;
+                    }
 
 					var elem = $(this),
 						title = elem.find('.project-title').text(),
