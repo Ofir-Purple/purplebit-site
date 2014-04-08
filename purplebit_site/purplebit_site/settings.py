@@ -223,7 +223,7 @@ try:
 except:
     pass
 
-ADMIN_EMAIL_ADDRESS = 'vladimir@purplebit.com'
+ADMIN_EMAIL_ADDRESS = 'contact@purplebit.com'
 FROM_EMAIL_ADDRESS = 'website@purplebit.com'
 
 # Blog
