@@ -1,13 +1,16 @@
 
 /* p2014e page */
-#maor-position {
-    padding-left: 10px;
+#about {
+    padding-bottom: 20px;
 }
 
-#maor-body-text {
+#about-text {
     padding-top: 20px;
 }
 
+#contact-head {
+    margin-bottom: 20px;
+}
 
 #contact-pycon-form .form-group label{
     display:none;
@@ -96,7 +99,7 @@
 }
 
 #main-nav .container {
-    padding: 16px 20px;
+    padding: 15px 20px;
 }
 
 #main-nav.scrolled .nav a, #main-nav.scrolled .nav a:active, #main-nav.scrolled .nav a:hover {
