@@ -14,6 +14,11 @@ def contact(request):
     Sends a contact email to the admin and saves the contact info
     in the DB.
     """
+    email_subject = 'A Contact Us request from purplebit.com'
+
+    # change email subject if this contact related to PyCon
+    if request.path.find('pycon'):
+        email_subject = 'A friend from PyCon contacted us via purplebit.com!'
 
     params = json.loads(request.body)
 
@@ -26,11 +31,10 @@ def contact(request):
         email=email,
         message=message
     )
-
     contact.save()
 
     send_mail(
-        'A Contact Us request from purplebit.com',
+        email_subject,
         """We received a contact us request on purplebit.com:
 
 Name: %(name)s

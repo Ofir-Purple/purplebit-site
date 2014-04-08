@@ -9,4 +9,5 @@ urlpatterns = patterns('backend.views',)
 # JSON API
 urlpatterns += patterns('',
 	url(r'contact/', views.contact, name="contact"),
+	url(r'contact/pycon', views.contact, name="contact-pycon"),
 )
