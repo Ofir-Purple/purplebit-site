@@ -123,11 +123,14 @@
 			
 				<div class="row">
 					<div class="col-sm-4 col-sm-offset-1 scrollimation fade-right">
-						<img class="img-responsive img-circle img-center" src="{% static 'main_site/img/edan-profile.jpg' %}" alt="">
+						<img class="img-responsive img-circle img-center" src="{% static 'main_site/img/ofir-circle.png' %}" alt="">
 					</div>
 					<div class="col-sm-6 col-sm-offset-1 scrollimation fade-right">
-						<h1>Hello, We're Purple Bit...</h1>
-						<p>We create beautiful web applications using <a href="https://www.djangoproject.com/" target="_blank">Django</a> and <a href="http://angularjs.org/" target="_blank">AngularJS</a>. Purple Bit was founded by veterans of <strong>elite Israeli programming units</strong> that assembled a team of the top of the crop developers. All of our developers have vast programming experience. We do <strong>Agile</strong>, we do <strong>lean</strong>, we maintain a close relationship with our clients in order to give you the <strong>best quality</strong> products at the <strong>shortest time</strong>! Our offices are located at the heart of <a href="#contact" class="scrollto">Tel Aviv, Israel</a>, and <a href="#portfolio" class="scrollto">our clients</a> are located all over the world, including the US, UK and Australia.</p>
+						<h1>Hi! Glad you dropped by.</h1>
+						<p>I'm Ofir Ovadia. If you're here, that means we probably met at Pycon 2014.</p>
+						<p>I'm the CTO of Purple Bit, a Tel Aviv-based Software Consultancy and Dev Shop specialising in Angular.JS and Python (who woulda guessed?). I've been in the Software biz for 10 years, but have been programming for the last 16 years.</p>
+						<p>Feel free to look around our website to find out more about us and the kind of work we do. We're incredibly proud of the products we've helped built, and we've had the great fortune to work with many amazing clients from around the world.</p>
+						<p>And please do get in touch! I love talking with just about anyone, especially software devs! You can use the form below to send me a quick message, and I'll get back to you as soon as I'm back from PyCon!</p>
 						<!-- <p></p> -->
 					</div>
 				</div><!--End row -->
@@ -143,7 +146,7 @@
 		
 			<div class="container">
 
-				<div class="row"><h1 class="text-center scrollimation fade-right" id="contact-head">PyContact</h1></div>
+				<div class="row"><h1 class="text-center scrollimation fade-right" id="contact-head">Send me a quick message</h1></div>
 
 				<div class="row">
 					
@@ -156,7 +159,7 @@
 						  <label class="control-label" for="contact-message">Message</label>
 							<div class="controls">
 								<i class="icon-comment"></i>
-								<textarea id="contact-message" name="contactMessage" placeholder="I wanna talk about..." class="form-control input-lg" rows="5" ng-model="contact.message" ng-init="contact.message='Hey, we met at PyCon-2014...'" required ng-blur="tryPristine()"></textarea>
+                                <textarea id="contact-message" name="contactMessage" placeholder="I wanna talk about..." class="form-control input-lg" rows="5" ng-model="contact.message" ng-init="contact.message='Hey, we met at PyCon 2014, and I just wanted to say: hello!'" required ng-blur="tryPristine()"></textarea>
 								<span class="error-message" ng-show="contactForm.contactMessage.$error.required && contactForm.contactMessage.$dirty">Please enter your message</span>
 							</div>
 						</div><!-- End textarea -->
@@ -165,7 +168,7 @@
 						  <label class="control-label" for="contact-name">Name</label>
 						  <div class="controls">
 							<i class="icon-user"></i>
-							<input id="contact-name" name="contactName" placeholder="My name is..." class="form-control input-lg" type="text" ng-model="contact.name" required ng-blur="tryPristine()">
+							<input id="contact-name" name="contactName" placeholder="Your name is..." class="form-control input-lg" type="text" ng-model="contact.name" required ng-blur="tryPristine()">
 							<span class="error-message" ng-show="contactForm.contactName.$error.required && contactForm.contactName.$dirty">Please enter your name.</span>
 						  </div>
 						</div><!-- End name input -->
@@ -174,7 +177,7 @@
 						  <label class="control-label" for="contact-mail">Email</label>
 						  <div class="controls">
 							<i class="icon-envelope"></i>
-							<input id="contact-mail" name="contactEmail" placeholder="Please respond at..." class="form-control input-lg" type="email" ng-model="contact.email" required ng-blur="tryPristine()">
+							<input id="contact-mail" name="contactEmail" placeholder="I can reach you @..." class="form-control input-lg" type="email" ng-model="contact.email" required ng-blur="tryPristine()">
 							<span class="error-message" ng-show="contactForm.contactEmail.$error.required && contactForm.contactEmail.$dirty">Please enter your email</span>
 							<span class="error-message" ng-show="contactForm.contactEmail.$error.email">Invalid email address</span>
 						  </div>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% load url from future %}
+<html lang="en-US" class="no-js">
+	<head>
+
+		<!-- ==============================================
+		Title and Meta Tags
+		=============================================== -->
+		<meta charset="utf-8">
+		<title>Purple Bit LTD</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<!-- ==============================================
+		Favicons
+		=============================================== -->
+		<link rel="shortcut icon" href="{% static 'main_site/img/favicon.ico' %}">
+		<link rel="apple-touch-icon" href="{% static 'main_site/img/apple-touch-icon.png' %}">
+		<link rel="apple-touch-icon" sizes="72x72" href="{% static 'main_site/img/apple-touch-icon-72x72.png' %}">
+		<link rel="apple-touch-icon" sizes="114x114" href="{% static 'main_site/img/apple-touch-icon-114x114.png' %}">
+		
+		<!-- ==============================================
+		CSS
+		=============================================== -->    
+		<link rel="stylesheet" href="{% static 'main_site/css/bootstrap.min.css' %}">
+		<link rel="stylesheet" href="{% static 'main_site/css/font-awesome.css' %}">
+		<link rel="stylesheet" href="{% static 'main_site/css/flexslider.css' %}">
+		<link rel="stylesheet" href="{% static 'main_site/css/designr-theme-purple.css' %}">
+		<link rel="stylesheet" href="{% static 'main_site/css/pycon.css' %}">
+		
+		
+		<!-- ==============================================
+		Fonts
+		=============================================== -->
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic,900' rel='stylesheet' type='text/css'>
+		
+		<!-- ==============================================
+		JS
+		=============================================== -->
+			
+		<!--[if lt IE 9]>
+			<script src="{% static 'main_site/js/respond.min.js' %}"></script>
+		<![endif]-->
+		
+		<script type="text/javascript" src="{% static 'main_site/js/libs/modernizr.min.js' %}"></script>
+		
+
+		<!-- angularjs -->
+		<script src="{% static 'main_site/js/angular-1.2.14.min.js' %}"></script>
+		<script src="{% static 'main_site/js/angular-sanitize.min.js' %}"></script>
+		<script src="{% static 'main_site/js/angular/purplebit.js' %}"></script>
+		<script src="{% static 'main_site/js/angular/directives.js' %}"></script>
+		<script src="{% static 'main_site/js/angular/projectListCtrl.js' %}"></script>
+		<script src="{% static 'main_site/js/angular/projectDetailsSrv.js' %}"></script>
+		<script src="{% static 'main_site/js/angular/managementSrv.js' %}"></script>
+		<script src="{% static 'main_site/js/angular/managersCtrl.js' %}"></script>
+		<script src="{% static 'main_site/js/angular/testimonialSrv.js' %}"></script>
+		<script src="{% static 'main_site/js/angular/testimonialCtrl.js' %}"></script>
+		<script src="{% static 'main_site/js/angular/contactCtrl.js' %}"></script>
+		
+		<script type="text/javascript">
+			angular.module('purplebit').constant('STATIC_URL', "{% static '' %}");
+		</script>
+
+		<!-- google analytics -->
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		  ga('create', 'UA-29161921-2', 'purplebit.com');
+		  ga('send', 'pageview');
+		</script>
+	</head>
+  
+	<body data-spy="scroll" data-target="#main-nav" data-offset="200" ng-app="purplebit">
+		<!-- ==============================================
+		MAIN NAV
+		=============================================== -->
+		<div id="main-nav" class="navbar navbar-fixed-top">
+			<div class="container">
+			
+				<div class="navbar-header">
+				
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#site-nav">
+						<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+					</button>
+					
+					<!-- ======= LOGO ========-->
+					<a class="navbar-brand scrollto " href="/#home"><img src="{% static 'main_site/img/logo.png' %}"></span></a>
+				
+				</div>
+				
+				<div id="site-nav" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<a href="/#services" class="scrollto">What we do</a>
+						</li>
+						<li>
+							<a href="/#about" class="scrollto">Team</a>
+						</li>
+						<li>
+							<a href="/#portfolio" class="scrollto">Portfolio</a>
+						</li>
+						<li>
+							<a href="/#contact" class="scrollto">Contact Us</a>
+						</li>
+						<li>
+							<a href="/blog/" class="scrollto">Blog</a>
+						</li>
+					</ul>
+				</div><!--End navbar-collapse -->
+				
+			</div><!--End container -->
+			
+		</div><!--End main-nav -->
+
+
+		<section id="about">
+		
+			<div class="container" id="about-text">
+			
+				<div class="row">
+					<div class="col-sm-4 col-sm-offset-1 scrollimation fade-right">
+						<img class="img-responsive img-circle img-center" src="{% static 'main_site/img/edan-profile.jpg' %}" alt="">
+					</div>
+					<div class="col-sm-6 col-sm-offset-1 scrollimation fade-right">
+						<h1>Hi! Glad you dropped by.</h1>
+						<p>I'm Edan Maor. If you're here, that means we probably met at Pycon 2014.</p>
+						<p>I'm the CEO of Purple Bit, a Tel Aviv-based Software Consultancy and Dev Shop specialising in Angular.JS and Python (who woulda guessed?). I've been in the Software biz for 11 years, but have been programming for the last 17 years (wowza!)</p>
+						<p>Feel free to look around our website to find out more about us and the kind of work we do. We're incredibly proud of the products we've helped built, and we've had the great fortune to work with many amazing clients from around the world.</p>
+						<p>And please do get in touch! I love talking with just about anyone, especially software devs! You can use the form below to send me a quick message, and I'll get back to you as soon as I'm back from PyCon!</p>
+						<!-- <p></p> -->
+					</div>
+				</div><!--End row -->
+				
+			</div><!--End container -->
+			
+		</section><!--End about section -->
+			
+		<!-- ==============================================
+		CONTACT
+		=============================================== -->			
+		<section ng-controller="contactCtrl">
+		
+			<div class="container">
+
+				<div class="row"><h1 class="text-center scrollimation fade-right" id="contact-head">Send me a quick message</h1></div>
+
+				<div class="row">
+					
+					<!--=== Contact Form ===-->
+					<form name="contactForm" id="contact-pycon-form" class="col-sm-7 col-md-8 col-md-push-2 scrollimation fade-right" ng-submit="submit('{% url 'backend:contact-pycon' %}')" novalidate>
+
+						{% csrf_token %}
+						
+						<div class="form-group">
+						  <label class="control-label" for="contact-message">Message</label>
+							<div class="controls">
+								<i class="icon-comment"></i>
+                                <textarea id="contact-message" name="contactMessage" placeholder="I wanna talk about..." class="form-control input-lg" rows="5" ng-model="contact.message" ng-init="contact.message='Hey, we met at PyCon 2014, and I just wanted to say: hello!'" required ng-blur="tryPristine()"></textarea>
+								<span class="error-message" ng-show="contactForm.contactMessage.$error.required && contactForm.contactMessage.$dirty">Please enter your message</span>
+							</div>
+						</div><!-- End textarea -->
+						
+						<div class="form-group">
+						  <label class="control-label" for="contact-name">Name</label>
+						  <div class="controls">
+							<i class="icon-user"></i>
+							<input id="contact-name" name="contactName" placeholder="Your name is..." class="form-control input-lg" type="text" ng-model="contact.name" required ng-blur="tryPristine()">
+							<span class="error-message" ng-show="contactForm.contactName.$error.required && contactForm.contactName.$dirty">Please enter your name.</span>
+						  </div>
+						</div><!-- End name input -->
+						
+						<div class="form-group">
+						  <label class="control-label" for="contact-mail">Email</label>
+						  <div class="controls">
+							<i class="icon-envelope"></i>
+							<input id="contact-mail" name="contactEmail" placeholder="I can reach you @..." class="form-control input-lg" type="email" ng-model="contact.email" required ng-blur="tryPristine()">
+							<span class="error-message" ng-show="contactForm.contactEmail.$error.required && contactForm.contactEmail.$dirty">Please enter your email</span>
+							<span class="error-message" ng-show="contactForm.contactEmail.$error.email">Invalid email address</span>
+						  </div>
+						</div><!-- End email input -->
+
+						<p>
+							<button name="submit" type="submit" class="btn btn-theme btn-lg" ng-disabled="contactForm.$invalid">
+								<i ng-class="contactBtn.icon"></i>Send Message
+							</button>
+						</p>
+						
+					</form><!-- End contact-form -->
+				  
+				</div><!-- End row -->
+			</div><!--End container -->
+
+
+		</section><!--End skills section -->
+		
+		<!-- ==============================================
+		FOOTER
+		=============================================== -->	
+		<footer id="main-footer">
+		
+			<div class="container">
+			
+				<div class="row">
+				
+					<div class="col-sm-6 left-col">
+						<h1 class="small-logo">Purple Bit LTD<br><span>A Web Consultancy</span></h1>
+						<ul class="footer-nav">
+							<li><a class="scrollto" href="/#home">Home</a></li>
+							<li><a class="scrollto" href="/#services">Services</a></li>
+							<li><a class="scrollto" href="/#portfolio">Portfolio</a></li>
+							<li><a class="scrollto" href="/#contact">Contact</a></li>
+						</ul>
+						<p>&copy; Copyright 2012 / All Rights Reserved</p>
+					</div>
+					
+					<div class="col-sm-6 right-col">
+						<h2>Who Are We?</h2>
+						<p>We're a dev-shop that specializes in Django and AngularJS. Located at the center of the startup hub of Tel Aviv, we work with many Israeli and world-wide startups and established companies, making their dreams come true.</p>
+					</div>
+					
+				</div><!-- End row -->
+				
+			</div><!-- End container -->
+			
+		</footer><!-- End footer -->
+
+		<!-- ==============================================
+		SCRIPTS
+		=============================================== -->	
+		<!-- crazy egg -->
+		<script type="text/javascript">
+			setTimeout(function(){var a=document.createElement("script");
+			var b=document.getElementsByTagName("script")[0];
+			a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0022/3273.js?"+Math.floor(new Date().getTime()/3600000);
+			a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+		</script>
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script>window.jQuery || document.write("<script src=\"{% static 'main_site/js/libs/jquery-1.8.2.min.js' %}\">\x3C/script>")</script>
+		
+		<script src="{% static 'main_site/js/libs/bootstrap.min.js' %}"></script>
+		<script src="{% static 'main_site/js/jquery.scrollto.js' %}"></script>
+		<script src="{% static 'main_site/js/jquery.flexslider.min.js' %}"></script>
+		<script src="{% static 'main_site/js/twitterFetcher_v10_min.js' %}"></script>
+		<script src="{% static 'main_site/js/jquery.masonry.min.js' %}"></script>
+		<script src="{% static 'main_site/js/waypoints.min.js' %}"></script>
+		<script src="{% static 'main_site/js/jquery.easypiechart.js' %}"></script>
+		<!-- <script src="{% static 'main_site/js/contact.js' %}"></script> -->
+		<script src="{% static 'main_site/js/designr.js' %}"></script>
+
+		
+	</body>
+	
+</html>
