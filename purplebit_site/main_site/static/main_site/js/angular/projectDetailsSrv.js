@@ -122,19 +122,6 @@ angular.module('purplebit').service('projectDetailsSrv', function($sanitize, STA
 			['main_site/img/projects/allscripts-540-310.png']
         ));
 
-		this.addProject(new this.Project(
-			'Combitel',
-			'Combitel >',
-            false,
-			'<p></p>',
-			'<p>Django</p>',
-			'',
-			'https://www.combitel.com.au/',
-			'main_site/img/projects/combitel-thumb-350-230.png',
-			'main_site/img/projects/combitel-logo-193-45.png',
-			'backend front-end',
-			['main_site/img/projects/combitel-540-310.png']
-        ));
 
 		
 		this.addProject(new this.Project(
@@ -154,7 +141,7 @@ angular.module('purplebit').service('projectDetailsSrv', function($sanitize, STA
 		this.addProject(new this.Project(
 			'ironSource',
 			'Internal Management System >',
-            false,
+            true,
 			'<p>ironSource employs its technological skills to develop exceptional solutions for digital distribution, ensuring that content creators prosper &amp; enrich our world. ironSource worked with Purple Bit to execute a project that was outside ironSource&#8217;s core business. As such ironSource developers could focus on the areas they know best and Purple Bit could supply ironSource with a fast turn-key solution saving both developers and management time for ironSource.</p>',
 			'<p>Django, Python, Aamazon EC2, Celery.</p>',
 			'',
@@ -168,7 +155,7 @@ angular.module('purplebit').service('projectDetailsSrv', function($sanitize, STA
         this.addProject(new this.Project(
 			'Desti',
 			'Server Backend & More >',
-            false,
+            true,
 			'<p>In the technological world, core in-house programmers sometimes have to take on peripheral yet vital tasks, which use up precious time throughout the project.  In these cases, outsourcing a few tasks can make the difference between reaching the goal on time or not.</p><p>Desti.com hired us at Purple Bit in order to take charge of some of these tasks, and thus to help them reach a crucial deadline ontime. Our team quickly got things under control, from building a landing page for the company, through setting up the server backup solutions and up to getting the server infrastructure to production level.</p>',
 			'<p>AWS, Python/Django, HTML5, JavaScript, CSS3/LESS, Munin, Monit, Boto, Fabric, Linux Server Administration, shell scripting.</p>',
 			'<p>"Purple Bit were <strong>available and flexible</strong> with timing issues, and the whole logistic process was good. The team was <strong>very accommodating to our needs</strong> regarding timing, office hours, etc.</p><p>The team came with an <strong>excellent approach and can-do attitude</strong>. It was a <strong>joy</strong> to work with them, as this is really not trivial for people who are paid hourly. This is one of the important reasons <strong>we&#8217;d want to work with Purple Bit again</strong>." – Imri Goldberg, CTO at Desti.com</p>',
@@ -181,6 +168,61 @@ angular.module('purplebit').service('projectDetailsSrv', function($sanitize, STA
             'main_site/img/projects/desti-1-540-310.jpg']
         ));
 		
+		this.addProject(new this.Project(
+			'Toys Alive',
+			'Toys Alive >',
+            true,
+			'<p>Toys Alive, a developer of smart toys, hired Purple Bit to help rebuild their internal sales systems.</p><p>The work we did for Toys Alive involved linking up with Salesforce and internal Excels, which were the systems in use by the sales staff at the time, and processing them to create a consumer and business-user facing website.</p>',
+			'<p>Python, Django, Excel processing, Salesforce integration, HTML/CSS/JS.</p>',
+			'',
+			'http://www.toysalive.com/',
+			'main_site/img/projects/toysalive-thumb-350-230.png',
+			'main_site/img/projects/toysalive-logo-300-130.png',
+			'backend front-end',
+			['main_site/img/projects/toysalive-540-310.png']
+		));
+
+		this.addProject(new this.Project(
+			'$ocial',
+			'$ocial >',
+            true,
+			'<p>$ocial, a startup that connects advertisers to celebrities for a unique advertising opportunity, contracted Purple Bit to help develop their client-facing admin interface, an Angular.js applications.</p><p>Purple Bit\'s experience with developing Django REST Api servers consumed by Restangular allowed quick building and factoring of the application.</p><p>In addition to the front-end components, Purple Bit helped re-architect the server-side makeup of $ocial\'s service.</p>',
+			'<p>Python, Django, REST Api, Angular.js, django-rest-framework, Restangular.</p>',
+			'',
+			'http://www.dollarsocial.com/',
+			'main_site/img/projects/social-thumb-350-230.png',
+			'main_site/img/projects/social-logo-165-49.png',
+			'backend front-end architecture',
+			['main_site/img/projects/social-540-310.png']
+		));
+
+		this.addProject(new this.Project(
+			'Chatty',
+			'A chat widget for any site >',
+            true,
+			'<p>Many website owners find it challenging to increase the average time people spend on site (and in direct relation, their income from advertising). Creating a chat system for online users is an effective way to do so.</p><p>Our main challenge when approaching the Chattybar project was how to create a complex and adaptable chat system, with simple integration.</p><p>The result was a complex backend system chat-room-widget, which works well with any browser and any resolution, added to any website using a single line of code.</p><p>Chattybar is able to support thousands of simultaneous users. On the other hand, the widget enjoys an intuitive User Interface that blends well with the look and feel of different websites.</p>',
+			'<p>JavaScript, jQuery, Python, Django, Amazon S3, Facebook API, MySQL.</p>',
+			'',
+			'http://www.chattybar.com/',
+			'main_site/img/projects/chatty-thumb-350-230.png',
+			'main_site/img/projects/chatty-logo.png',
+			'backend front-end architecture',
+			['main_site/img/projects/chatty-540-310.jpg']
+        ));
+
+		this.addProject(new this.Project(
+			'Combitel',
+			'Combitel >',
+            false,
+			'<p></p>',
+			'<p>Django</p>',
+			'',
+			'https://www.combitel.com.au/',
+			'main_site/img/projects/combitel-thumb-350-230.png',
+			'main_site/img/projects/combitel-logo-193-45.png',
+			'backend front-end',
+			['main_site/img/projects/combitel-540-310.png']
+        ));
 		this.addProject(new this.Project(
 			'AtLargeinc.',
 			'AtLargeinc. >',
@@ -210,33 +252,7 @@ angular.module('purplebit').service('projectDetailsSrv', function($sanitize, STA
 		));
 
 
-		this.addProject(new this.Project(
-			'Toys Alive',
-			'Toys Alive >',
-            false,
-			'<p>Toys Alive, a developer of smart toys, hired Purple Bit to help rebuild their internal sales systems.</p><p>The work we did for Toys Alive involved linking up with Salesforce and internal Excels, which were the systems in use by the sales staff at the time, and processing them to create a consumer and business-user facing website.</p>',
-			'<p>Python, Django, Excel processing, Salesforce integration, HTML/CSS/JS.</p>',
-			'',
-			'http://www.toysalive.com/',
-			'main_site/img/projects/toysalive-thumb-350-230.png',
-			'main_site/img/projects/toysalive-logo-300-130.png',
-			'backend front-end',
-			['main_site/img/projects/toysalive-540-310.png']
-		));
 
-		this.addProject(new this.Project(
-			'$ocial',
-			'$ocial >',
-            true,
-			'<p>$ocial, a startup that connects advertisers to celebrities for a unique advertising opportunity, contracted Purple Bit to help develop their client-facing admin interface, an Angular.js applications.</p><p>Purple Bit\'s experience with developing Django REST Api servers consumed by Restangular allowed quick building and factoring of the application.</p><p>In addition to the front-end components, Purple Bit helped re-architect the server-side makeup of $ocial\'s service.</p>',
-			'<p>Python, Django, REST Api, Angular.js, django-rest-framework, Restangular.</p>',
-			'',
-			'http://www.dollarsocial.com/',
-			'main_site/img/projects/social-thumb-350-230.png',
-			'main_site/img/projects/social-logo-165-49.png',
-			'backend front-end architecture',
-			['main_site/img/projects/social-540-310.png']
-		));
 
 		this.addProject(new this.Project(
 			'WaveDeck',
@@ -252,19 +268,6 @@ angular.module('purplebit').service('projectDetailsSrv', function($sanitize, STA
 			['main_site/img/projects/wavedeck-540-310.png']
 		));
 
-		this.addProject(new this.Project(
-			'Chatty',
-			'A chat widget for any site >',
-            true,
-			'<p>Many website owners find it challenging to increase the average time people spend on site (and in direct relation, their income from advertising). Creating a chat system for online users is an effective way to do so.</p><p>Our main challenge when approaching the Chattybar project was how to create a complex and adaptable chat system, with simple integration.</p><p>The result was a complex backend system chat-room-widget, which works well with any browser and any resolution, added to any website using a single line of code.</p><p>Chattybar is able to support thousands of simultaneous users. On the other hand, the widget enjoys an intuitive User Interface that blends well with the look and feel of different websites.</p>',
-			'<p>JavaScript, jQuery, Python, Django, Amazon S3, Facebook API, MySQL.</p>',
-			'',
-			'http://www.chattybar.com/',
-			'main_site/img/projects/chatty-thumb-350-230.png',
-			'main_site/img/projects/chatty-logo.png',
-			'backend front-end architecture',
-			['main_site/img/projects/chatty-540-310.jpg']
-        ));
 		
 		this.addProject(new this.Project(
 			'Tel Aviv Pub Data Mining',
