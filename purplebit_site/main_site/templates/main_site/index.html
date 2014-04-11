@@ -62,6 +62,15 @@
 			angular.module('purplebit').constant('STATIC_URL', "{% static '' %}");
 		</script>
 
+		<!-- google analytics -->
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		  ga('create', 'UA-29161921-2', 'purplebit.com');
+		  ga('send', 'pageview');
+		</script>
 	</head>
   
 	<body data-spy="scroll" data-target="#main-nav" data-offset="200" ng-app="purplebit">
@@ -99,9 +108,9 @@
 						<li>
 							<a href="#contact" class="scrollto">Contact Us</a>
 						</li>
-						<!-- <li>
-							<a href="/blog/" class="scrollto">Blog</a>
-						</li> -->
+						<li>
+							<a href="http://blog.purplebit.com" class="scrollto">Blog</a>
+						</li>
 					</ul>
 				</div><!--End navbar-collapse -->
 				
@@ -156,8 +165,9 @@
 					<div class="col-sm-6 col-sm-offset-1 scrollimation fade-right">
 						<h1>Hello, We're Purple Bit</h1>
                         <p>We create <strong>beautiful and usable </strong> web applications for our customers using a <strong>Lean Development Process</strong>, built on <a href="https://www.djangoproject.com/" target="_blank">Django</a> and <a href="http://angularjs.org/" target="_blank">AngularJS</a>. </p>
-                        <p>Purple Bit was founded by veterans of an <strong>elite Israeli programming unit</strong>, with over 10 years of experience building products and managing software teams. We built Purple Bit with two goals: create amazing products through technical excellence, and build a team of super-smart developers who <strong>love programming.</strong><p>
-                        <p>Our process is built on a <strong>Lean/Agile</strong> methodology, which we have been using and teaching for many years. We've worked with everything from small 1-man companies to the largest organisations, and with customers from all around the world.</p>
+                        <p>Purple Bit was founded by veterans of an <strong>elite programming unit</strong> in the Israeli Army , with over 10 years of experience building products and managing software teams. We built Purple Bit with two goals: create amazing products through technical excellence, and build a team of super-smart <strong>developers who love programming.</strong><p>
+                        <p>We've worked with everything from small 1-man companies to the largest organisations, with customers from <strong>around the world</strong>. We're incredibly proud of the products we've built, and we've had the great fortune to work with many amazing clients and launch amazing products.</p>
+                        <p>Our process is built on a <strong>Lean/Agile</strong> methodology, which we have been using and teaching for many years.</p>
 						<a href="#portfolio" class="btn btn-theme transparent scrollto">View our Portfolio</a>
 					</div>
 				</div><!--End row -->
@@ -486,6 +496,7 @@
 							<li><a class="scrollto" href="#portfolio">Portfolio</a></li>
 							<li><a class="scrollto" href="#contact">Contact</a></li>
 						</ul>
+                        <p>Photography kindly provided by <a href=http://portfolio.okrain.com/>Genady Okrain</a></p>
 						<p>&copy; Copyright 2012 / All Rights Reserved</p>
 					</div>
 					
@@ -503,6 +514,14 @@
 		<!-- ==============================================
 		SCRIPTS
 		=============================================== -->	
+		<!-- crazy egg -->
+		<script type="text/javascript">
+			setTimeout(function(){var a=document.createElement("script");
+			var b=document.getElementsByTagName("script")[0];
+			a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0022/3273.js?"+Math.floor(new Date().getTime()/3600000);
+			a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+		</script>
+
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 		<script>window.jQuery || document.write("<script src=\"{% static 'main_site/js/libs/jquery-1.8.2.min.js' %}\">\x3C/script>")</script>
 		

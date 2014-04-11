@@ -19,5 +19,5 @@ urlpatterns = patterns('',
 
     url(r'^blog/', include('blog.urls')),
 
-    url(r'^$', include('main_site.urls')),
+    url(r'', include('main_site.urls')),
 )

@@ -36,6 +36,8 @@ angular.module('purplebit').controller('contactCtrl', function($scope, $http, $t
 			$scope.contactBtn.message = 'Message Sent';
 			$scope.contactBtn.icon = 'icon-ok';
 
+			// on successful submit send GA event
+			ga('send', 'event', 'form', 'submit', 'Contact');
 			$timeout(function() {
 				$scope.contactBtn.message = 'Send Message';
 				$scope.contactBtn.icon = 'icon-location-arrow';

@@ -1241,20 +1241,22 @@ header.jumbotron{
     box-shadow:none;
 }
 
+
 #contact-form .form-control::-webkit-input-placeholder { /* WebKit browsers */
-    color:    #7A539B;
+    color:    #c5b1d5;
 }
 #contact-form .form-control:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color:    #7A539B;
+    color:    #c5b1d5;
     opacity:1;
 }
 #contact-form .form-control::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color:    #7A539B;
+    color:    #c5b1d5;
     opacity:1;
 }
 #contact-form .form-control:-ms-input-placeholder { /* Internet Explorer 10+ */
-    color:    #7A539B;
+    color:    #c5b1d5;
 }
+
 
 #contact-form .error-message {
     background:#7A539B;
@@ -1623,7 +1625,7 @@ p {
     font-size:24px;
     line-height:32px;
 	padding-top:14px;
-}
+    }
 }
 
 @media (max-width: 320px) {
@@ -1631,4 +1633,3 @@ p {
         width: 320px;
         }
 }
-
