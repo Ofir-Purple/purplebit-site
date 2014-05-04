@@ -561,9 +561,20 @@ header.jumbotron{
     text-decoration:none;
 }
 
-#about img {
+#about .teamslider {
     box-shadow:12px 0px 0px 12px rgba(255,255,255,0.2),
                 -12px 0px 0px 12px rgba(255,255,255,0.2);
+    border-radius: 50%;
+    height: 205px;
+}
+
+#about .teamslider .slides li {
+    margin-top: -19px;
+    overflow: hidden;
+
+}
+#about .teamslider .slides .img-circle {
+    border-radius: 50%;
 }
 
 /*-----------------------

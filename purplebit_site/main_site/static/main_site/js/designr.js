@@ -33,6 +33,18 @@ $(document).ready(function() {
 		}
 	});
 
+	// Start the team photos slideshow.
+	$('.teamslider').flexslider({
+		slideshowSpeed: 3000,
+		animation: 'fade',
+		controlNav: false,
+		start: function(){
+			$('.teamslider.image-wrapper')
+			.addClass('done')
+			.prev('.loader').fadeOut();
+		}
+	});
+
 	/*============================================
 	Header Functions
 	==============================================*/
