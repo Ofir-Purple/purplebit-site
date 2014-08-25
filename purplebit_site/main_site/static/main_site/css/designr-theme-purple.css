@@ -565,7 +565,12 @@ header.jumbotron{
     box-shadow:12px 0px 0px 12px rgba(255,255,255,0.2),
                 -12px 0px 0px 12px rgba(255,255,255,0.2);
     border-radius: 50%;
-    height: 205px;
+    height: 0;
+    padding-top: 56.3%;
+}
+
+#about .teamslider .slides{
+    margin-top: -56.4%;
 }
 
 #about .teamslider .slides li {
