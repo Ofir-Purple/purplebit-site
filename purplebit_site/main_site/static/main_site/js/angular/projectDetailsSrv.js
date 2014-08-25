@@ -65,21 +65,6 @@ angular.module('purplebit').service('projectDetailsSrv', function($sanitize, STA
 			'main_site/img/projects/fitblok-profile-540-310.jpg']
         ));
 
-		// projects (objects)
-		this.addProject(new this.Project(
-			'SAP',
-			'Custom-built internal tool >',
-            true,
-			'<p>SAP approached us about an internal project for easing several development processes.</p><p>For this project, Purple Bit used its Django skills to build a custom web portal for connecting to various devices remotely.</p>',
-			'<p>Python, Django, Perl, Applescript, VNC.</p>',
-			'',
-			'',
-			'main_site/img/projects/sap-thumb-350-230.jpg',
-			'main_site/img/projects/sap-logo-200-200.jpg',
-			'backend architecture',
-			['main_site/img/projects/sap-540-310.png']
-        ));
-
 		this.addProject(new this.Project(
 			'Autodesk',
 			'B2C Consumer site >',
@@ -209,50 +194,6 @@ angular.module('purplebit').service('projectDetailsSrv', function($sanitize, STA
 			'backend front-end architecture',
 			['main_site/img/projects/chatty-540-310.jpg']
         ));
-
-		this.addProject(new this.Project(
-			'Combitel',
-			'Combitel >',
-            false,
-			'<p></p>',
-			'<p>Django</p>',
-			'',
-			'https://www.combitel.com.au/',
-			'main_site/img/projects/combitel-thumb-350-230.png',
-			'main_site/img/projects/combitel-logo-193-45.png',
-			'backend front-end',
-			['main_site/img/projects/combitel-540-310.png']
-        ));
-		this.addProject(new this.Project(
-			'AtLargeinc.',
-			'AtLargeinc. >',
-            false,
-			'',
-			'',
-			'',
-			'',
-			'main_site/img/projects/atlarge-thumb-350-230.jpg',
-			'main_site/img/projects/atlarge-logo.jpeg',
-			'backend front-end architecture',
-			['main_site/img/projects/atlargeinc-540-310.png']
-		));
-
-		this.addProject(new this.Project(
-			'WireX',
-			'WireX >',
-            false,
-			'',
-			'',
-			'',
-			'',
-			'main_site/img/projects/wirex-thumb-350-230.png',
-			'main_site/img/projects/wirex-thumb-350-230.png',
-			'backend front-end architecture',
-			['main_site/img/projects/wirex-540-310.png']
-		));
-
-
-
 
 		this.addProject(new this.Project(
 			'WaveDeck',
